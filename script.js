@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Funciones obligatorias para el Modal Estilo Apple
 function openModal() {
-    const modal = document.getElementById('infoModal'); // Asegúrate que tu overlay use id="infoModal" o cambia este ID por el de tu HTML
+    const modal = document.getElementById('infoModal');
     if (modal) modal.classList.add('active');
 }
 
@@ -92,7 +92,7 @@ window.addEventListener('click', function(event) {
 
 
 /* ----------------------------------------------------------
-   WIDGET FLOTANTE DE FAUNA SUR Y AUDIOS DE AVES (Añadido a tu avance)
+   WIDGET FLOTANTE DE FAUNA SUR Y AUDIOS DE AVES
    ---------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", function () {
     const faunaToggleBtn = document.getElementById("faunaToggleBtn");
@@ -134,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (birdName) {
                     const audioPath = `audio/aves/${birdName}.mp3`;
 
-                    // Pequeño feedback visual de selección en la lista
                     faunaItems.forEach(i => i.style.opacity = "1");
                     this.style.opacity = "0.7";
 
@@ -143,6 +142,27 @@ document.addEventListener("DOMContentLoaded", function () {
                         console.warn("Reproducción de audio prevenida o bloqueada por políticas del navegador:", error);
                     });
                 }
+            });
+        });
+    }
+});
+
+/* ----------------------------------------------------------
+   CONTROL DEL MENÚ HAMBURGUESA MÓVIL (AGREGADO Y NECESARIO)
+   ---------------------------------------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Cerrar automáticamente el menú al hacer clic en cualquier opción
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
             });
         });
     }

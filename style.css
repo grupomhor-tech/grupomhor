@@ -216,7 +216,6 @@ html {
     position: relative;
 } 
 
-/* Efecto Lens Flare / Destello de luz sutil en hover sobre Glassmorphism */
 .propiedad-card::after {
     content: '';
     position: absolute;
@@ -248,14 +247,13 @@ html {
     overflow: hidden; 
 } 
 
-/* Efecto de Zoom Cinemático al cargar o interactuar */
 .spatial-image-scale {
     transform: scale(1);
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .propiedad-card:hover .spatial-image-scale {
-    transform: scale(1.06); /* Zoom in tipo Apple Vision Pro / Showcase */
+    transform: scale(1.06); 
 }
 
 .carousel img { 
@@ -991,6 +989,7 @@ html {
     color: #d1d1d6; 
     font-weight: 500; 
 }
+
 /* ==========================================================
    SPLASH SCREEN DE CARGA INICIAL (ESTILO APPLE)
    ========================================================== */
@@ -1023,4 +1022,58 @@ html {
 @keyframes splashPulse {
     0% { transform: scale(0.95); opacity: 0.7; }
     100% { transform: scale(1.05); opacity: 1; }
+}
+
+/* ==========================================================
+   MENÚ HAMBURGUESA MÓVIL ESTILO APPLE / STARLINK (AÑADIDO)
+   ========================================================== */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .mobile-menu-btn {
+        display: flex !important;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.4rem;
+    }
 }
