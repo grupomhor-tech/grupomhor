@@ -1,4 +1,4 @@
-[cite: 17]* { 
+* { 
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
@@ -476,7 +476,7 @@ html {
     z-index: 2; 
 } 
 
-/* SECCIÓN CONTENEDOR GENÉRICA CORREGIDA (EVITA ALTURAS FORZADAS 100VH CAusantes DE HUECOS) */ 
+/* SECCIÓN CONTENEDOR GENÉRICA CORREGIDA */ 
 .section-container { 
     position: relative; 
     display: flex; 
@@ -841,24 +841,25 @@ html {
     background: #0077ed; 
 } 
 
-/* SECCIÓN QUIÉNES SOMOS */ 
+/* SECCIÓN QUIÉNES SOMOS (CORREGIDA: ELIMINA EL HUECO NEGRO) */ 
 .about-section { 
     position: relative !important; 
-    height: 100vh !important; 
+    min-height: 100vh !important; 
+    height: auto !important; 
     width: 100% !important; 
     display: flex !important; 
     flex-direction: column !important; 
-    justify-content: space-between !important; 
+    justify-content: center !important; 
     align-items: center !important; 
     text-align: center !important; 
     background-size: cover !important; 
     background-position: center !important; 
-    padding: 120px 20px 40px 20px !important; 
+    padding: 120px 20px 100px 20px !important; 
     overflow: hidden;
 } 
 
 .about-section .hero-content { 
-    margin: auto 0 !important; 
+    margin: 0 auto !important; 
     position: relative;
     z-index: 3;
 } 
@@ -883,7 +884,7 @@ html {
     cursor: pointer !important; 
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important; 
     z-index: 10 !important; 
-    margin: 20px auto 0 auto !important; 
+    margin: 30px auto 0 auto !important; 
 } 
 
 .about-section .apple-plus-btn:hover { 
