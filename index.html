@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Mhor | Inversión y Gestión Inmobiliaria</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Metaetiquetas SEO e Información de la Marca -->
+    <meta name="description" content="Inmobiliaria en Pucón y el sur de Chile. Grupo Mhor SpA ofrece inversión, corretaje digital, material audiovisual y marketing para proyectos y desarrollo de activos inmobiliarios de alto nivel.">
+    <meta name="keywords" content="Inmobiliaria en Pucón, Grupo Mhor SpA, corretaje en Pucón, propiedades Villarrica, inversión inmobiliaria sur de Chile, contenido audiovisual, marketing inmobiliario B2B">
+    <meta name="author" content="Grupo Mhor SpA">
+</head>
+<body>
+
+    <!-- SPLASH SCREEN DE CARGA INICIAL (ESTILO APPLE) -->
+    <div id="splashScreen" class="splash-container">
+        <div class="splash-logo-wrapper">
+            <img src="img/logo-mhor.png" alt="Grupo Mhor" class="splash-logo">
+        </div>
+    </div>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="nav-bar">
+        <div class="logo-container">
+            <img src="img/logo-mhor.png" alt="Grupo Mhor" class="site-logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="#propiedades">Propiedades</a></li>
+            <li><a href="#agencia">Agencia B2B</a></li>
+            <li><a href="#contacto" class="btn-contacto">Contacto</a></li>
+        </ul>
+    </header>
+
+    <!-- SECCIÓN HERO (PORTADA) -->
+    <section id="inicio" class="hero-section" style="background-image: url('img/portada.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Inversión y gestión inmobiliaria de alto nivel.</h1>
+            <p>Especialistas en ventas digitales, marketing para proyectos y desarrollo de activos en Pucón y el sur de Chile.</p>
+            
+            <div class="hero-buttons">
+                <a href="#propiedades" class="btn-main">Ver Propiedades</a>
+                <a href="#agencia" class="btn-sec">Servicios B2B</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN QUIÉNES SOMOS -->
+    <section id="quienes-somos" class="about-section" style="background-image: url('img/sobre-nosotros.jpg');">
+        <div class="hero-overlay"></div>
+        
+        <!-- Contenido de texto centrado -->
+        <div class="hero-content apple-reveal">
+            <span class="linea-tag tag-verde">CONSTRUIMOS SUEÑOS</span>
+            <h1>Expertos en conectar el sur con tu futuro.</h1>
+            <p>Fusionamos nuestra experiencia, visión de negocios y desarrollo estratégico desde La Araucanía.</p>
+        </div>
+
+        <!-- BOTÓN "+" FUERA DEL TEXTO, ANCLADO AL FONDO DE LA SECCIÓN -->
+        <button class="apple-plus-btn" onclick="openModal()" aria-label="Ver más información">+</button>
+
+        <!-- VENTANA MODAL CON FONDO DIFUMINADO -->
+        <div id="infoModal" class="apple-modal-overlay">
+            <div class="apple-modal-card">
+                <button class="apple-modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
+                <span class="modal-category">NUESTRA FILOSOFÍA</span>
+                <h2>Pasión por lo que hacemos.</h2>
+                <p>En Grupo Mhor no solo gestionamos propiedades; entendemos la esencia de La Araucanía y acompañamos a cada cliente con transparencia y desarrollo estratégico. Respaldados por una sólida trayectoria en la gran industria minera —teniendo la oportunidad de trabajar con referentes como Escondida BHP, Sierra Gorda SCM, El Abra SCM, entre otras—, trasladamos esa excelencia, seguridad y compromiso a cada proyecto que realizamos.</p>
+            </div>
+        </div>
+    </section>
+        
+    <!-- SECCIÓN PROPIEDADES DESTACADAS -->
+    <section id="propiedades" class="propiedades-section">
+        <div class="container-pro">
+            <div class="section-header apple-reveal">
+                <span class="linea-tag">LÍNEA A: PROPTECH BOUTIQUE</span>
+                <h2 class="section-title">Propiedades Destacadas</h2>
+                <p class="section-subtitle">Activos inmobiliarios seleccionados con alta plusvalía en Pucón, Villarrica y La Araucanía.</p>
+            </div>
+
+            <div class="propiedades-grid">
+                <!-- Propiedad 1 -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                    <div class="carousel spatial-image-scale" id="car1">
+                        <span class="card-badge">Terreno</span>
+                        <img src="img/propiedad1/foto1.jpg" class="active" alt="Foto 1">
+                        <img src="img/propiedad1/foto2.jpg" alt="Foto 2">
+                        <img src="img/propiedad1/foto3.jpg" alt="Foto 3">
+                        <button class="prev" onclick="moveSlide('car1', -1)">❮</button>
+                        <button class="next" onclick="moveSlide('car1', 1)">❯</button>
+                    </div>
+                    <div class="card-content glass-card-effect">
+                        <h3 class="card-title">Parcelas rodeadas de bosque nativo a minutos de Pucón</h3>
+                        
+                        <div class="card-specs-futuristic">
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M21 3H3v18h18V3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+                                <span>5000m²</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                <span>Luz y Agua</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                <span>Acceso privado</span>
+                            </div>
+                        </div>
+
+                        <div class="card-price">Desde $75.000.000 CLP</div>
+                    </div>
+                </div>
+
+                <!-- Propiedad 2 -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                    <div class="carousel spatial-image-scale" id="car2">
+                        <span class="card-badge">Departamento</span>
+                        <img src="img/propiedad2/foto1.jpg" class="active" alt="Foto 1">
+                        <img src="img/propiedad2/foto2.jpg" alt="Foto 2">
+                        <img src="img/propiedad2/foto3.jpg" alt="Foto 3">
+                        <button class="prev" onclick="moveSlide('car2', -1)">❮</button>
+                        <button class="next" onclick="moveSlide('car2', 1)">❯</button>
+                    </div>
+                    <div class="card-content glass-card-effect">
+                        <h3 class="card-title">Departamento en Condominio Loncotraro, Villarrica</h3>
+                        
+                        <div class="card-specs-futuristic">
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                <span>2D 1B</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                                <span>Estacionamiento Privado</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                <span>Conserjería</span>
+                            </div>
+                        </div>
+
+                        <div class="card-price">$90.000.000 CLP</div>
+                    </div>
+                </div>
+
+                <!-- Propiedad 3 -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                    <div class="carousel spatial-image-scale" id="car3">
+                        <span class="card-badge">Terreno</span>
+                        <img src="img/propiedad3/foto1.jpg" class="active" alt="Foto 1">
+                        <img src="img/propiedad3/foto2.jpg" alt="Foto 2">
+                        <img src="img/propiedad3/foto3.jpg" alt="Foto 3">
+                        <button class="prev" onclick="moveSlide('car3', -1)">❮</button>
+                        <button class="next" onclick="moveSlide('car3', 1)">❯</button>
+                    </div>
+                    <div class="card-content glass-card-effect">
+                        <h3 class="card-title">Oportunidad de Inversión Comercial</h3>
+                        
+                        <div class="card-specs-futuristic">
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M21 3H3v18h18V3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+                                <span>325m²</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                <span>Luz y Agua</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                                <span>Céntrico</span>
+                            </div>
+                        </div>
+
+                        <div class="card-price">$180.000.000 CLP</div>
+                    </div>
+                </div>
+
+                <!-- Propiedad 4 -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                    <div class="carousel spatial-image-scale" id="car4">
+                        <span class="card-badge">Vivienda</span>
+                        <img src="img/propiedad4/foto1.jpg" class="active" alt="Foto 1">
+                        <img src="img/propiedad4/foto2.jpg" alt="Foto 2">
+                        <img src="img/propiedad4/foto3.jpg" alt="Foto 3">
+                        <button class="prev" onclick="moveSlide('car4', -1)">❮</button>
+                        <button class="next" onclick="moveSlide('car4', 1)">❯</button>
+                    </div>
+                    <div class="card-content glass-card-effect">
+                        <h3 class="card-title">Amplia Casa Remodelada en Villarrica</h3>
+                        
+                        <div class="card-specs-futuristic">
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                <span>2 pisos 2D 1B</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                <span>Buena conectividad</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                                <span>Tranquilidad</span>
+                            </div>
+                        </div>
+
+                        <div class="card-price">$92.000.000 CLP</div>
+                    </div>
+                </div>
+
+                <!-- Propiedad 5 -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                    <div class="carousel spatial-image-scale" id="car5">
+                        <span class="card-badge">Terreno</span>
+                        <img src="img/propiedad5/foto1.jpg" class="active" alt="Foto 1">
+                        <img src="img/propiedad5/foto2.jpg" alt="Foto 2">
+                        <img src="img/propiedad5/foto3.jpg" alt="Foto 3">
+                        <button class="prev" onclick="moveSlide('car5', -1)">❮</button>
+                        <button class="next" onclick="moveSlide('car5', 1)">❯</button>
+                    </div>
+                    <div class="card-content glass-card-effect">
+                        <h3 class="card-title">Parcela Mirador de La Barda Caburgua</h3>
+                        
+                        <div class="card-specs-futuristic">
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M21 3H3v18h18V3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+                                <span>5000 m²</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                <span>Luz y Agua a conectar</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <span>Vistas Panorámicas</span>
+                            </div>
+                        </div>
+
+                        <div class="card-price">$33.000.000 CLP</div>
+                    </div>
+                </div>
+
+                <!-- Propiedad 6 -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                    <div class="carousel spatial-image-scale" id="car6">
+                        <span class="card-badge">Disponible</span>
+                        <img src="img/propiedad6/foto1.jpg" class="active" alt="Foto 1">
+                        <img src="img/propiedad6/foto2.jpg" alt="Foto 2">
+                        <img src="img/propiedad6/foto3.jpg" alt="Foto 3">
+                        <button class="prev" onclick="moveSlide('car6', -1)">❮</button>
+                        <button class="next" onclick="moveSlide('car6', 1)">❯</button>
+                    </div>
+                    <div class="card-content glass-card-effect">
+                        <h3 class="card-title">Exclusivo</h3>
+                        
+                        <div class="card-specs-futuristic">
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M21 3H3v18h18V3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
+                                <span>m²</span>
+                            </div>
+                            <div class="spec-item">
+                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                <span>Rol Propio</span>
+                            </div>
+                        </div>
+
+                        <div class="card-price">UF</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN B2B -->
+    <section id="agencia" class="b2b-modern-section">
+        <div class="container-pro">
+            <div class="section-header apple-reveal">
+                <span class="linea-tag">LÍNEA B: AGENCIA B2B</span>
+                <h2 class="section-title">Soluciones Inmobiliarias Avanzadas</h2>
+                <p class="section-subtitle">Selecciona una opción para visualizar su contenido.</p>
+                
+                <div class="b2b-tabs-nav">
+                    <button class="tab-btn active" onclick="switchB2BTab('aceleracion', this)">Gestión de ventas</button>
+                    <button class="tab-btn" onclick="switchB2BTab('mapeo', this)"> Producción audiovisual</button>
+                    <button class="tab-btn" onclick="switchB2BTab('desarrollo', this)">Identidad e Proyectos</button>
+                    <button class="tab-btn" onclick="switchB2BTab('eventos', this)">Eventos y Lanzamiento</button>
+                </div>
+            </div>
+
+            <div class="b2b-content-container apple-reveal">
+                <div id="aceleracion" class="b2b-tab-pane active">
+                    <div class="b2b-card-modern video-wrapper">
+                        <video autoplay muted loop playsinline class="bg-video">
+                            <source src="img/drone.mp4" type="video/mp4">
+                        </video>
+                        <div class="overlay-dark"></div>
+                        <div class="b2b-inner-text">
+                            <span class="linea-tag">REAL ESTATE MARKETING</span>
+                            <h3>Aceleración Comercial</h3>
+                            <p>Utilizamos estrategias de venta y publicidad ADS, para asegurar el cierre de negociaciones rápidamente.</p>
+                            <a href="#contacto" class="btn-main">Solicitar reunión</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mapeo" class="b2b-tab-pane">
+                    <div class="b2b-card-modern image-wrapper" style="background-image: url('img/lotes-aerea.jpg');">
+                        <div class="overlay-dark"></div>
+                        <div class="b2b-inner-text">
+                            <span class="linea-tag">360 PANORAMIC</span>
+                            <h3>Registros audiovisuales</h3>
+                            <p>Tomas satelitales y vuelos con dron para dimensionar la ubicación, deslindes y morfología exactas del terreno.</p>
+                            <a href="#contacto" class="btn-main">Consultar Disponibilidad</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="desarrollo" class="b2b-tab-pane">
+                    <div class="b2b-card-modern image-wrapper" style="background-image: url('img/serv-construccion.jpg');">
+                        <div class="overlay-dark"></div>
+                        <div class="b2b-inner-text">
+                            <span class="linea-tag">ASSET DEVELOPMENT</span>
+                            <h3>Desarrollo de ideas</h3>
+                            <p>Te ayudamos a sacar el máximo potencial para el éxito de tu proyecto.</p>
+                            <a href="#contacto" class="btn-main">Agendar reunión</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="eventos" class="b2b-tab-pane">
+                    <div class="b2b-card-modern image-wrapper" style="background-image: url('img/eventos-lanzamientos.jpg');">
+                        <div class="overlay-dark"></div>
+                        <div class="b2b-inner-text">
+                            <span class="linea-tag">LAUNCH EVENTS</span>
+                            <h3>Eventos de Lanzamiento</h3>
+                            <p>Organización y producción de eventos de alto nivel para la presentación de proyectos inmobiliarios y loteos exclusivos.</p>
+                            <a href="#contacto" class="btn-main">Cotizar Evento</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="section-container contact-section apple-reveal" style="background-image: url('img/sobre-nosotros.jpg');">
+        <div class="overlay-dark"></div>
+        <div class="container-inner relative-z">
+            <h2>Iniciemos una conversación estratégica.</h2>
+            <p class="section-subtitle">Conectemos para llevar tu próximo proyecto o inversión al siguiente nivel en el sur de Chile.</p>
+            <a href="mailto:grupomhor@gmail.com" class="btn-main">Enviar un Correo Directo</a>
+
+            <div class="apple-metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-num">+Plusvalía</span>
+                    <span class="metric-label">Ubicaciones estratégicas en Pucón y Villarrica</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-num">100%</span>
+                    <span class="metric-label">Gestión digital y asesoría personalizada</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-num">B2B</span>
+                    <span class="metric-label">Gestión Comercial y desarrollo de ideas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER DEFINITIVO Y EQUILIBRADO -->
+    <footer class="footer-section apple-reveal">
+        <div class="footer-container">
+            <div class="footer-col-logo">
+                <img src="img/logo-mhor.png" alt="Grupo Mhor" class="footer-logo">
+            </div>
+
+            <div class="footer-col-social">
+                <h3 class="footer-slogan">¡Más sobre nosotros!</h3>
+                <div class="social-icons">
+                    <a href="https://web.facebook.com/grupomhor" target="_blank" aria-label="Facebook">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://www.instagram.com/grupomhor" target="_blank" aria-label="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@GrupoMhor" target="_blank" aria-label="YouTube">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"></polygon></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@grupomhor.chile" target="_blank" aria-label="TikTok">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col-info footer-address-block">
+                <h4>CASA MATRIZ</h4>
+                <p>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 5px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    Condominio Los Robles III, N° 88, Pucón
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WIDGET INTERACTIVO: FAUNA NATIVA DEL SUR -->
+    <div class="fauna-widget-container">
+        <!-- Botón Flotante a la Derecha (Arriba de WhatsApp) -->
+        <button id="faunaToggleBtn" class="fauna-float-btn" aria-label="Explorar sonidos de aves del sur de Chile">
+            <span>Aves del sur</span>
+        </button>
+
+        <!-- Panel Desplegable Minimalista -->
+        <div id="faunaModal" class="fauna-modal-panel">
+            <div class="fauna-header">
+                <h4>Biodiversidad</h4>
+                <p>Escucha la esencia de nuestros bosques nativos</p>
+                <button id="faunaCloseBtn" class="fauna-close">&times;</button>
+            </div>            
+            <div class="fauna-list">
+                <!-- Ave 3: Chucao -->
+                <div class="fauna-item" data-audio="chucao">
+                    <img src="img/aves/chucao.jpg" alt="Chucao" class="fauna-avatar">
+                    <div class="fauna-info">
+                        <span class="fauna-name">Chucao</span>
+                        <span class="fauna-sci">Scelorchilus rubecula</span>
+                    </div>
+                    <button class="play-bird-btn" aria-label="Reproducir Chucao">▶</button>
+                </div>
+                <!-- Ave 1: Pitío -->
+                <div class="fauna-item" data-audio="pitio">
+                    <img src="img/aves/pitio.jpg" alt="Carpintero Pitío" class="fauna-avatar">
+                    <div class="fauna-info">
+                        <span class="fauna-name">Carpintero Pitío</span>
+                        <span class="fauna-sci">Colaptes pitius</span>
+                    </div>
+                    <button class="play-bird-btn" aria-label="Reproducir Pitío">▶</button>
+                </div>
+
+                <!-- Ave 2: Zorzal -->
+                <div class="fauna-item" data-audio="zorzal">
+                    <img src="img/aves/zorzal.jpg" alt="Zorzal" class="fauna-avatar">
+                    <div class="fauna-info">
+                        <span class="fauna-name">Zorzal</span>
+                        <span class="fauna-sci">Turdus falcklandii</span>
+                    </div>
+                    <button class="play-bird-btn" aria-label="Reproducir Zorzal">▶</button>
+                </div>
+
+                <!-- Ave 4: Rayadito -->
+                <div class="fauna-item" data-audio="rayadito">
+                    <img src="img/aves/rayadito.jpg" alt="Rayadito" class="fauna-avatar">
+                    <div class="fauna-info">
+                        <span class="fauna-name">Rayadito</span>
+                        <span class="fauna-sci">Aphrastura spinicauda</span>
+                    </div>
+                    <button class="play-bird-btn" aria-label="Reproducir Rayadito">▶</button>
+                </div>
+
+                <!-- Ave 5: Chercán -->
+                <div class="fauna-item" data-audio="chercan">
+                    <img src="img/aves/chercan.jpg" alt="Chercan" class="fauna-avatar">
+                    <div class="fauna-info">
+                        <span class="fauna-name">Chercan</span>
+                        <span class="fauna-sci">Troglodytes aedon</span>
+                    </div>
+                    <button class="play-bird-btn" aria-label="Reproducir Chercan">▶</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Elemento de Audio Oculto Dinámico -->
+    <audio id="birdAudioPlayer"></audio>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/56948814357" class="whatsapp-float" target="_blank" aria-label="Contacto de WhatsApp">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
