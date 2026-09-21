@@ -359,7 +359,7 @@ html {
 /* B2B */ 
 .b2b-modern-section { 
     position: relative;
-    padding: 30px 5% 80px 5%; 
+    padding: 100px 5% 80px 5%; /* SIMETRÍA EXACTA CON LÍNEA A */
     background-color: #050505; 
     overflow: hidden;
 } 
