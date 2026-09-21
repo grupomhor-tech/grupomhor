@@ -191,7 +191,7 @@ html {
     color: #86868b; 
 } 
 
-/* PROPIEDADES */ 
+/* PROPIEDADES (LÍNEA A) */ 
 .propiedades-section { 
     position: relative; 
     padding: 100px 5%; 
@@ -356,10 +356,10 @@ html {
     transform: translateY(0); 
 }
 
-/* B2B */ 
+/* B2B (LÍNEA B) - ESPACIADO IGUALADO A LÍNEA A */ 
 .b2b-modern-section { 
     position: relative;
-    padding: 100px 5% 80px 5%; /* SIMETRÍA EXACTA CON LÍNEA A */
+    padding: 100px 5% 80px 5%; /* SIMETRÍA EXACTA CON .propiedades-section */
     background-color: #050505; 
     overflow: hidden;
 } 
@@ -520,7 +520,7 @@ html {
     }
 }
 
-/* EFECTO GLASS PURO Y LIMPIO (SIN BORDES FEOS, LETRAS BLANCAS) */ 
+/* EFECTO GLASS PURO Y LIMPIO */ 
 .contact-section .metric-card { 
     background: rgba(255, 255, 255, 0.04) !important; 
     border: 1px solid rgba(255, 255, 255, 0.1) !important; 
@@ -889,7 +889,7 @@ html {
     transform: scale(1.1) !important; 
 } 
 
-/* MODAL OVERLAY Y TARJETA CON EFECTO GLASSMORPHISM A PANTALLA COMPLETA Y VELOCIDAD APPLE */ 
+/* MODAL OVERLAY */ 
 .apple-modal-overlay { 
     position: fixed; 
     top: 0; 
@@ -1020,9 +1020,7 @@ html {
     font-weight: 500; 
 }
 
-/* ==========================================================
-    MENÚ HAMBURGUESA MÓVIL ESTILO STARLINK Y AJUSTES APPLE
-   ========================================================== */
+/* MENÚ HAMBURGUESA MÓVIL */
 .splash-container {
     display: none !important; 
 }
@@ -1134,7 +1132,6 @@ html {
         border-radius: 20px !important;
     }
 
-    /* Corrección estricta para celular: compacto, centrado y con scroll interno si es necesario */
     .apple-modal-card {
         width: 90% !important;
         max-width: 380px !important;
@@ -1156,9 +1153,6 @@ html {
     }
 }
 
-/* ==========================================================
-    CORRECCIÓN DE LEGIBILIDAD EN SECCIÓN CONTACTO MÓVIL
-   ========================================================== */
 .contact-section .section-subtitle {
     color: #d1d1d6 !important; 
     margin-bottom: 20px !important;
