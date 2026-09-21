@@ -1,16 +1,5 @@
-/* ----------------------------------------------------------
-   CONTROL DE LA TRANSICIÓN DE CARGA INICIAL (SPLASH SCREEN)
-   ---------------------------------------------------------- */
-window.addEventListener("load", () => {
-    const splash = document.getElementById("splashScreen");
-    if (splash) {
-        setTimeout(() => {
-            splash.classList.add("fade-out");
-        }, 500); // Se oculta suavemente tras medio segundo (0.5s)
-    }
-});
 /* ==========================================================
-   TU SCRIPT ACTUALIZADO Y EN LÍNEA CON TU AVANCE + WIDGET FAUNA
+   SISTEMA GENERAL DE GRUPO MHOR (CARRUSEL, B2B, MODAL, AVES Y MENÚ)
    ========================================================== */
 
 // Carrusel general de propiedades
@@ -82,14 +71,13 @@ function closeModal() {
     if (modal) modal.classList.remove('active');
 }
 
-// Cerrar si hacen clic fuera de la tarjeta blanca (en el fondo difuminado)
+// Cerrar si hacen clic fuera de la tarjeta blanca
 window.addEventListener('click', function(event) {
     const modal = document.getElementById('infoModal');
     if (modal && event.target === modal) {
         closeModal();
     }
 });
-
 
 /* ----------------------------------------------------------
    WIDGET FLOTANTE DE FAUNA SUR Y AUDIOS DE AVES
@@ -101,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const birdAudioPlayer = document.getElementById("birdAudioPlayer");
     const faunaItems = document.querySelectorAll(".fauna-item");
 
-    // Abrir/Cerrar panel flotante de fauna
     if (faunaToggleBtn && faunaModal) {
         faunaToggleBtn.addEventListener("click", function (e) {
             e.stopPropagation();
@@ -109,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Botón de cierre explícito (X) dentro del widget
     if (faunaCloseBtn && faunaModal) {
         faunaCloseBtn.addEventListener("click", function (e) {
             e.stopPropagation();
@@ -117,7 +103,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Cerrar el widget de fauna al hacer clic fuera de él
     document.addEventListener("click", function (e) {
         const container = document.querySelector(".fauna-widget-container");
         if (container && faunaModal && !container.contains(e.target)) {
@@ -125,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Reproducción de audios vinculados mediante [data-audio] en la lista
     if (birdAudioPlayer && faunaItems.length > 0) {
         faunaItems.forEach(item => {
             item.addEventListener("click", function () {
@@ -148,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ----------------------------------------------------------
-   CONTROL DEL MENÚ HAMBURGUESA MÓVIL (AGREGADO Y NECESARIO)
+   CONTROL DEL MENÚ HAMBURGUESA MÓVIL
    ---------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.getElementById('menuBtn');
@@ -159,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
             navLinks.classList.toggle('active');
         });
 
-        // Cerrar automáticamente el menú al hacer clic en cualquier opción
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');

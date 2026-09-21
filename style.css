@@ -185,9 +185,7 @@ html {
     color: #86868b; 
 } 
 
-/* ==========================================================
-   ESTILO APPLE: PROPIEDADES, ZOOM CINEMÁTICO Y GLASSMORPHISM
-   ========================================================== */
+/* PROPIEDADES */ 
 .propiedades-section { 
     position: relative; 
     padding: 100px 5%; 
@@ -352,7 +350,7 @@ html {
     transform: translateY(0); 
 } 
 
-/* B2B / SOLUCIONES INMOBILIARIAS */ 
+/* B2B */ 
 .b2b-modern-section { 
     position: relative;
     padding: 30px 5% 80px 5%; 
@@ -814,7 +812,7 @@ html {
     background: #0077ed; 
 } 
 
-/* SECCIÓN "QUIÉNES SOMOS" */ 
+/* SECCIÓN QUIÉNES SOMOS */ 
 .about-section { 
     position: relative !important; 
     height: 100vh !important; 
@@ -953,7 +951,6 @@ html {
     color: #515154; 
 } 
 
-/* ESPECIFICACIONES DE PROPIEDADES */ 
 .card-specs-futuristic { 
     display: flex; 
     align-items: center; 
@@ -991,42 +988,12 @@ html {
 }
 
 /* ==========================================================
-   SPLASH SCREEN DE CARGA INICIAL (ESTILO APPLE)
+   MENÚ HAMBURGUESA MÓVIL ESTILO STARLINK Y AJUSTES APPLE
    ========================================================== */
 .splash-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-    opacity: 1;
-    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s ease;
+    display: none !important; /* Ocultar de raiz el splash screen */
 }
 
-.splash-container.fade-out {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.splash-logo {
-    height: 42px;
-    object-fit: contain;
-}
-
-@keyframes splashPulse {
-    0% { transform: scale(0.95); opacity: 0.7; }
-    100% { transform: scale(1.05); opacity: 1; }
-}
-
-/* ==========================================================
-   MENÚ HAMBURGUESA MÓVIL ESTILO APPLE / STARLINK (AÑADIDO)
-   ========================================================== */
 .mobile-menu-btn {
     display: none;
     background: none;
@@ -1048,8 +1015,29 @@ html {
 }
 
 @media (max-width: 900px) {
+    /* Botón circular sutil estilo Starlink con 3 líneas nítidas */
     .mobile-menu-btn {
         display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 5px !important;
+        width: 38px !important;
+        height: 38px !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 50% !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        padding: 0 !important;
+    }
+
+    .mobile-menu-btn span {
+        display: block !important;
+        width: 16px !important;
+        height: 1.5px !important;
+        background-color: #ffffff !important;
+        border-radius: 1px;
     }
 
     .nav-links {
@@ -1076,34 +1064,8 @@ html {
     .nav-links a {
         font-size: 1.4rem;
     }
-}
-/* ==========================================================
-   AJUSTES FINALES MÓVILES: ESTILO STARLINK Y APPLE B2B
-   ========================================================== */
 
-@media (max-width: 900px) {
-    /* 1. Botón hamburguesa sutil estilo Starlink (con fondo circular y líneas finas) */
-    .mobile-menu-btn {
-        display: flex !important;
-        width: 38px !important;
-        height: 38px !important;
-        background: rgba(255, 255, 255, 0.1) !important;
-        border-radius: 50% !important;
-        align-items: center !important;
-        justify-content: center !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-        padding: 8px !important;
-    }
-
-    .mobile-menu-btn span {
-        height: 1.5px !important; /* Líneas más finas y sutiles */
-        background-color: #f5f5f7 !important;
-        width: 18px !important;
-    }
-
-    /* 2. Reducir tamaño de títulos gigantes en celulares */
+    /* Reducción de títulos gigantes en celulares */
     .hero-content h1 {
         font-size: 2.2rem !important;
         line-height: 1.2 !important;
@@ -1123,7 +1085,7 @@ html {
         font-size: 2rem !important;
     }
 
-    /* 3. Pestañas B2B ordenadas de dos en dos (uno al lado del otro) estilo Apple */
+    /* Pestañas B2B en cuadrícula compacta de 2x2 estilo Apple */
     .b2b-tabs-nav {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
