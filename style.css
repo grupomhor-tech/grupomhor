@@ -114,7 +114,7 @@ html {
     flex-wrap: wrap; 
 } 
 
-/* BOTONES GLOBALES */ 
+/* BOTONES GLOBALES Y CORRECCIÓN SIMETRÍA B2B */ 
 .btn-main { 
     background: #0071e3; 
     color: #fff; 
@@ -132,20 +132,22 @@ html {
 } 
 
 .btn-sec { 
-    background: rgba(255,255,255,0.15); 
-    color: #fff; 
-    border: 1px solid rgba(255,255,255,0.3); 
+    background: rgba(255, 255, 255, 0.12) !important; 
+    color: #ffffff !important; 
+    border: 1px solid rgba(255, 255, 255, 0.25) !important; 
     padding: 12px 28px; 
     border-radius: 25px; 
     text-decoration: none; 
-    font-weight: 600; 
-    backdrop-filter: blur(10px); 
-    transition: transform 0.2s, background 0.3s; 
+    font-weight: 700 !important; 
+    backdrop-filter: blur(15px) !important; 
+    -webkit-backdrop-filter: blur(15px) !important; 
+    transition: all 0.3s ease !important; 
     display: inline-block; 
 } 
 
 .btn-sec:hover { 
-    background: rgba(255,255,255,0.25); 
+    background: rgba(255, 255, 255, 0.22) !important; 
+    border-color: rgba(255, 255, 255, 0.4) !important; 
     transform: translateY(-2px); 
 } 
 
@@ -349,6 +351,7 @@ html {
     opacity: 1; 
     transform: translateY(0); 
 }
+
 /* B2B */ 
 .b2b-modern-section { 
     position: relative;
@@ -503,27 +506,37 @@ html {
     margin-top: 40px; 
 } 
 
-.metric-card { 
-    background: rgba(255, 255, 255, 0.05); 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(10px); 
-    padding: 20px; 
-    border-radius: 12px; 
+/* TARJETAS DE CONTACTO UNIFICADAS CON EFECTO CRISTAL Y NEGRITA */ 
+.contact-section .metric-card { 
+    background: rgba(22, 22, 24, 0.75) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.15) !important; 
+    backdrop-filter: blur(25px) !important; 
+    -webkit-backdrop-filter: blur(25px) !important; 
+    border-radius: 16px !important; 
+    padding: 22px !important; 
     text-align: center; 
+    transition: border-color 0.3s ease; 
 } 
 
-.metric-num { 
+.contact-section .metric-card:hover { 
+    border-color: rgba(41, 151, 255, 0.4) !important; 
+} 
+
+.contact-section .metric-num { 
     display: block; 
-    font-size: 1.8rem; 
-    font-weight: 700; 
-    color: #2997ff; 
+    font-size: 2rem !important; 
+    font-weight: 700 !important; 
+    color: #ffffff !important; 
     margin-bottom: 5px; 
+    letter-spacing: -0.5px;
+    text-shadow: 0 0 20px rgba(41, 151, 255, 0.3); 
 } 
 
-.metric-label { 
-    font-size: 0.85rem; 
-    color: #86868b; 
-} 
+.contact-section .metric-label { 
+    font-size: 0.9rem !important; 
+    color: #e5e5ea !important; 
+    font-weight: 500 !important; 
+}
 
 .contact-section {
     position: relative;
@@ -990,7 +1003,7 @@ html {
    MENÚ HAMBURGUESA MÓVIL ESTILO STARLINK Y AJUSTES APPLE
    ========================================================== */
 .splash-container {
-    display: none !important; /* Ocultar de raiz el splash screen */
+    display: none !important; 
 }
 
 .mobile-menu-btn {
@@ -1014,7 +1027,6 @@ html {
 }
 
 @media (max-width: 900px) {
-    /* Botón circular sutil estilo Starlink con 3 líneas nítidas */
     .mobile-menu-btn {
         display: flex !important;
         flex-direction: column !important;
@@ -1064,7 +1076,6 @@ html {
         font-size: 1.4rem;
     }
 
-    /* Reducción de títulos gigantes en celulares */
     .hero-content h1 {
         font-size: 2.2rem !important;
         line-height: 1.2 !important;
@@ -1084,7 +1095,6 @@ html {
         font-size: 2rem !important;
     }
 
-    /* Pestañas B2B en cuadrícula compacta de 2x2 estilo Apple */
     .b2b-tabs-nav {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
@@ -1103,11 +1113,12 @@ html {
         border-radius: 20px !important;
     }
 }
+
 /* ==========================================================
    CORRECCIÓN DE LEGIBILIDAD EN SECCIÓN CONTACTO MÓVIL
    ========================================================== */
 .contact-section .section-subtitle {
-    color: #d1d1d6 !important; /* Tono blanco/gris nítido igual al de Aceleración Comercial */
+    color: #d1d1d6 !important; 
     margin-bottom: 20px !important;
 }
 
