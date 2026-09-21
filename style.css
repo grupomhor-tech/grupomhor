@@ -541,7 +541,7 @@ html {
     display: block; 
     font-size: 1.8rem !important; 
     font-weight: 700 !important; 
-    color: #ffffff !important; /* Letras blancas como pediste */ 
+    color: #ffffff !important; 
     margin-bottom: 6px; 
     letter-spacing: -0.5px;
 } 
