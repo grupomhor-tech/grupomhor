@@ -1103,3 +1103,28 @@ html {
         border-radius: 20px !important;
     }
 }
+/* ==========================================================
+   CORRECCIÓN DE LEGIBILIDAD EN SECCIÓN CONTACTO MÓVIL
+   ========================================================== */
+.contact-section .section-subtitle {
+    color: #d1d1d6 !important; /* Tono blanco/gris nítido igual al de Aceleración Comercial */
+    margin-bottom: 20px !important;
+}
+
+@media (max-width: 900px) {
+    .contact-section {
+        height: auto !important;
+        padding: 100px 20px 80px 20px !important;
+    }
+    
+    .contact-section h2 {
+        font-size: 2.2rem !important;
+        line-height: 1.15 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .contact-section .section-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+    }
+}
