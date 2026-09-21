@@ -502,39 +502,42 @@ html {
 .apple-metrics-grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
-    gap: 20px; 
-    margin-top: 40px; 
+    gap: 15px; 
+    margin-top: 30px; 
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
 } 
 
-/* TARJETAS DE CONTACTO UNIFICADAS CON EFECTO CRISTAL Y NEGRITA */ 
+/* EFECTO GLASS ORIGINAL Y COMPACTO PARA TARJETAS DE CONTACTO */ 
 .contact-section .metric-card { 
-    background: rgba(22, 22, 24, 0.75) !important; 
-    border: 1px solid rgba(255, 255, 255, 0.15) !important; 
-    backdrop-filter: blur(25px) !important; 
-    -webkit-backdrop-filter: blur(25px) !important; 
+    background: rgba(255, 255, 255, 0.04) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.12) !important; 
+    backdrop-filter: blur(15px) !important; 
+    -webkit-backdrop-filter: blur(15px) !important; 
     border-radius: 16px !important; 
-    padding: 22px !important; 
+    padding: 16px 20px !important; 
     text-align: center; 
-    transition: border-color 0.3s ease; 
+    transition: all 0.3s ease; 
 } 
 
 .contact-section .metric-card:hover { 
-    border-color: rgba(41, 151, 255, 0.4) !important; 
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important; 
 } 
 
 .contact-section .metric-num { 
     display: block; 
-    font-size: 2rem !important; 
+    font-size: 1.6rem !important; 
     font-weight: 700 !important; 
-    color: #ffffff !important; 
-    margin-bottom: 5px; 
+    color: #2997ff !important; /* Azul original elegante */ 
+    margin-bottom: 4px; 
     letter-spacing: -0.5px;
-    text-shadow: 0 0 20px rgba(41, 151, 255, 0.3); 
 } 
 
 .contact-section .metric-label { 
-    font-size: 0.9rem !important; 
-    color: #e5e5ea !important; 
+    font-size: 0.82rem !important; 
+    color: #86868b !important; 
     font-weight: 500 !important; 
 }
 
@@ -544,8 +547,8 @@ html {
 }
 
 .contact-section .btn-main { 
-    margin-top: 30px; 
-    margin-bottom: 40px; 
+    margin-top: 20px; 
+    margin-bottom: 30px; 
 } 
 
 .footer-section { 
