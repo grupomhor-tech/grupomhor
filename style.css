@@ -111,10 +111,11 @@ html {
     display: flex; 
     gap: 15px; 
     justify-content: center; 
+    align-items: center;
     flex-wrap: wrap; 
 } 
 
-/* BOTONES GLOBALES Y CORRECCIÓN SIMETRÍA B2B */ 
+/* BOTONES GLOBALES UNIFICADOS (MISMO TAMAÑO Y FORMATO) */ 
 .btn-main { 
     background: #0071e3; 
     color: #fff; 
@@ -124,6 +125,8 @@ html {
     font-weight: 600; 
     transition: transform 0.2s, background 0.3s; 
     display: inline-block; 
+    border: 1px solid #0071e3;
+    line-height: normal;
 } 
 
 .btn-main:hover { 
@@ -132,22 +135,23 @@ html {
 } 
 
 .btn-sec { 
-    background: rgba(255, 255, 255, 0.12) !important; 
+    background: rgba(255, 255, 255, 0.08) !important; 
     color: #ffffff !important; 
-    border: 1px solid rgba(255, 255, 255, 0.25) !important; 
-    padding: 12px 28px; 
-    border-radius: 25px; 
-    text-decoration: none; 
-    font-weight: 700 !important; 
+    border: 1px solid rgba(255, 255, 255, 0.2) !important; 
+    padding: 12px 28px !important; 
+    border-radius: 25px !important; 
+    text-decoration: none !important; 
+    font-weight: 600 !important; 
     backdrop-filter: blur(15px) !important; 
     -webkit-backdrop-filter: blur(15px) !important; 
     transition: all 0.3s ease !important; 
-    display: inline-block; 
+    display: inline-block !important; 
+    line-height: normal !important;
 } 
 
 .btn-sec:hover { 
-    background: rgba(255, 255, 255, 0.22) !important; 
-    border-color: rgba(255, 255, 255, 0.4) !important; 
+    background: rgba(255, 255, 255, 0.18) !important; 
+    border-color: rgba(255, 255, 255, 0.35) !important; 
     transform: translateY(-2px); 
 } 
 
@@ -501,44 +505,51 @@ html {
 
 .apple-metrics-grid { 
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    grid-template-columns: repeat(3, 1fr); 
     gap: 15px; 
     margin-top: 30px; 
-    max-width: 750px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 } 
 
-/* EFECTO GLASS ORIGINAL Y COMPACTO PARA TARJETAS DE CONTACTO */ 
+@media (max-width: 900px) {
+    .apple-metrics-grid {
+        grid-template-columns: 1fr;
+        max-width: 360px;
+    }
+}
+
+/* EFECTO GLASS PURO Y LIMPIO (SIN BORDES FEOS, LETRAS BLANCAS) */ 
 .contact-section .metric-card { 
     background: rgba(255, 255, 255, 0.04) !important; 
-    border: 1px solid rgba(255, 255, 255, 0.12) !important; 
-    backdrop-filter: blur(15px) !important; 
-    -webkit-backdrop-filter: blur(15px) !important; 
-    border-radius: 16px !important; 
-    padding: 16px 20px !important; 
+    border: 1px solid rgba(255, 255, 255, 0.1) !important; 
+    backdrop-filter: blur(20px) !important; 
+    -webkit-backdrop-filter: blur(20px) !important; 
+    border-radius: 18px !important; 
+    padding: 20px 16px !important; 
     text-align: center; 
     transition: all 0.3s ease; 
 } 
 
 .contact-section .metric-card:hover { 
     background: rgba(255, 255, 255, 0.08) !important;
-    border-color: rgba(255, 255, 255, 0.25) !important; 
+    border-color: rgba(255, 255, 255, 0.2) !important; 
 } 
 
 .contact-section .metric-num { 
     display: block; 
-    font-size: 1.6rem !important; 
+    font-size: 1.8rem !important; 
     font-weight: 700 !important; 
-    color: #2997ff !important; /* Azul original elegante */ 
-    margin-bottom: 4px; 
+    color: #ffffff !important; /* Letras blancas como pediste */ 
+    margin-bottom: 6px; 
     letter-spacing: -0.5px;
 } 
 
 .contact-section .metric-label { 
-    font-size: 0.82rem !important; 
-    color: #86868b !important; 
-    font-weight: 500 !important; 
+    font-size: 0.85rem !important; 
+    color: #a1a1a6 !important; 
+    font-weight: 400 !important; 
 }
 
 .contact-section {
@@ -547,8 +558,8 @@ html {
 }
 
 .contact-section .btn-main { 
-    margin-top: 20px; 
-    margin-bottom: 30px; 
+    margin-top: 25px; 
+    margin-bottom: 25px; 
 } 
 
 .footer-section { 
@@ -854,25 +865,27 @@ html {
     bottom: auto !important; 
     left: auto !important; 
     transform: none !important; 
-    background: rgba(255, 255, 255, 0.2) !important; 
-    border: 2px solid #ffffff !important; 
+    background: rgba(255, 255, 255, 0.15) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; 
     color: #ffffff !important; 
-    width: 42px !important; 
-    height: 42px !important; 
+    width: 44px !important; 
+    height: 44px !important; 
     border-radius: 50% !important; 
     display: flex !important; 
     align-items: center !important; 
     justify-content: center !important; 
     font-size: 22px !important; 
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
     cursor: pointer !important; 
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important; 
     z-index: 10 !important; 
-    margin-top: 20px !important; 
+    margin: 20px auto 0 auto !important; 
 } 
 
 .about-section .apple-plus-btn:hover { 
-    background: #ffffff !important; 
-    color: #000000 !important; 
+    background: rgba(255, 255, 255, 0.3) !important; 
+    border-color: rgba(255, 255, 255, 0.5) !important; 
     transform: scale(1.1) !important; 
 } 
 
