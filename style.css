@@ -1015,10 +1015,6 @@ html {
     pointer-events: none;
 }
 
-.splash-logo-wrapper {
-    animation: splashPulse 1.2s infinite alternate ease-in-out;
-}
-
 .splash-logo {
     height: 42px;
     object-fit: contain;
