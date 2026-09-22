@@ -1,5 +1,16 @@
-[cite: 14]/* ==========================================================
-   SISTEMA GENERAL DE GRUPO MHOR (CARRUSEL, B2B, MODAL, AVES Y MENÚ)
+/* ----------------------------------------------------------
+   CONTROL DE LA TRANSICIÓN DE CARGA INICIAL (SPLASH SCREEN)
+   ---------------------------------------------------------- */
+window.addEventListener("load", () => {
+    const splash = document.getElementById("splashScreen");
+    if (splash) {
+        setTimeout(() => {
+            splash.classList.add("fade-out");
+        }, 500); // Se oculta suavemente tras medio segundo (0.5s)
+    }
+});
+/* ==========================================================
+   TU SCRIPT ACTUALIZADO Y EN LÍNEA CON TU AVANCE + WIDGET FAUNA
    ========================================================== */
 
 // Carrusel general de propiedades
@@ -62,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Funciones obligatorias para el Modal Estilo Apple
 function openModal() {
-    const modal = document.getElementById('infoModal');
+    const modal = document.getElementById('infoModal'); // Asegúrate que tu overlay use id="infoModal" o cambia este ID por el de tu HTML
     if (modal) modal.classList.add('active');
 }
 
@@ -71,7 +82,7 @@ function closeModal() {
     if (modal) modal.classList.remove('active');
 }
 
-// Cerrar si hacen clic fuera de la tarjeta blanca
+// Cerrar si hacen clic fuera de la tarjeta blanca (en el fondo difuminado)
 window.addEventListener('click', function(event) {
     const modal = document.getElementById('infoModal');
     if (modal && event.target === modal) {
@@ -79,8 +90,9 @@ window.addEventListener('click', function(event) {
     }
 });
 
+
 /* ----------------------------------------------------------
-   WIDGET FLOTANTE DE FAUNA SUR Y AUDIOS DE AVES
+   WIDGET FLOTANTE DE FAUNA SUR Y AUDIOS DE AVES (Añadido a tu avance)
    ---------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", function () {
     const faunaToggleBtn = document.getElementById("faunaToggleBtn");
@@ -89,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const birdAudioPlayer = document.getElementById("birdAudioPlayer");
     const faunaItems = document.querySelectorAll(".fauna-item");
 
+    // Abrir/Cerrar panel flotante de fauna
     if (faunaToggleBtn && faunaModal) {
         faunaToggleBtn.addEventListener("click", function (e) {
             e.stopPropagation();
@@ -96,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Botón de cierre explícito (X) dentro del widget
     if (faunaCloseBtn && faunaModal) {
         faunaCloseBtn.addEventListener("click", function (e) {
             e.stopPropagation();
@@ -103,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // Cerrar el widget de fauna al hacer clic fuera de él
     document.addEventListener("click", function (e) {
         const container = document.querySelector(".fauna-widget-container");
         if (container && faunaModal && !container.contains(e.target)) {
@@ -110,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Reproducción de audios vinculados mediante [data-audio] en la lista
     if (birdAudioPlayer && faunaItems.length > 0) {
         faunaItems.forEach(item => {
             item.addEventListener("click", function () {
@@ -118,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (birdName) {
                     const audioPath = `audio/aves/${birdName}.mp3`;
 
+                    // Pequeño feedback visual de selección en la lista
                     faunaItems.forEach(i => i.style.opacity = "1");
                     this.style.opacity = "0.7";
 
@@ -129,48 +146,4 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
-});
-
-/* ----------------------------------------------------------
-   CONTROL DEL MENÚ HAMBURGUESA MÓVIL Y SCROLL OFFSET
-   ---------------------------------------------------------- */
-document.addEventListener("DOMContentLoaded", () => {
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-
-    if (menuBtn && navLinks) {
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-    }
-
-    // Corrección automática de desplazamiento con offset para evitar que el menú tape las secciones
-    const menuItems = document.querySelectorAll('.nav-links a[href^="#"]');
-    
-    menuItems.forEach(link => {
-        link.addEventListener("click", function (e) {
-            const targetId = this.getAttribute("href");
-            if (targetId === "#") return;
-            
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                e.preventDefault();
-                const navHeight = 90; // Compensación exacta de la barra de navegación fija
-                const elementPosition = targetSection.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navHeight;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
 });

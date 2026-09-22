@@ -1,4 +1,4 @@
-[cite: 13]<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -13,20 +13,19 @@
 </head>
 <body>
 
+    <!-- SPLASH SCREEN DE CARGA INICIAL (ESTILO APPLE) -->
+    <div id="splashScreen" class="splash-container">
+        <div class="splash-logo-wrapper">
+            <img src="img/logo-mhor.png" alt="Grupo Mhor" class="splash-logo">
+        </div>
+    </div>
+
     <!-- MENÚ DE NAVEGACIÓN -->
     <header class="nav-bar">
         <div class="logo-container">
             <img src="img/logo-mhor.png" alt="Grupo Mhor" class="site-logo">
         </div>
-        
-        <!-- Botón Hamburguesa Móvil (Estilo Starlink/Apple) con 3 líneas -->
-        <button class="mobile-menu-btn" id="menuBtn" aria-label="Menú">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <ul class="nav-links" id="navLinks">
+        <ul class="nav-links">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#quienes-somos">Quiénes Somos</a></li>
             <li><a href="#propiedades">Propiedades</a></li>
@@ -40,7 +39,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>Inversión y gestión inmobiliaria de alto nivel.</h1>
-            <p>Especialistas en ventas digitales, marketing para proyectos y desarrollo de activos en el sur de Chile.</p>
+            <p>Especialistas en ventas digitales, marketing para proyectos y desarrollo de activos en Pucón y el sur de Chile.</p>
             
             <div class="hero-buttons">
                 <a href="#propiedades" class="btn-main">Ver Propiedades</a>
@@ -53,14 +52,17 @@
     <section id="quienes-somos" class="about-section" style="background-image: url('img/sobre-nosotros.jpg');">
         <div class="hero-overlay"></div>
         
+        <!-- Contenido de texto centrado -->
         <div class="hero-content apple-reveal">
             <span class="linea-tag tag-verde">CONSTRUIMOS SUEÑOS</span>
             <h1>Expertos en conectar el sur con tu futuro.</h1>
             <p>Fusionamos nuestra experiencia, visión de negocios y desarrollo estratégico desde La Araucanía.</p>
         </div>
 
+        <!-- BOTÓN "+" FUERA DEL TEXTO, ANCLADO AL FONDO DE LA SECCIÓN -->
         <button class="apple-plus-btn" onclick="openModal()" aria-label="Ver más información">+</button>
 
+        <!-- VENTANA MODAL CON FONDO DIFUMINADO -->
         <div id="infoModal" class="apple-modal-overlay">
             <div class="apple-modal-card">
                 <button class="apple-modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
@@ -252,7 +254,7 @@
                         <button class="next" onclick="moveSlide('car6', 1)">❯</button>
                     </div>
                     <div class="card-content glass-card-effect">
-                        <h3 class="card-title">Espacio exclusivo</h3>
+                        <h3 class="card-title">Exclusivo</h3>
                         
                         <div class="card-specs-futuristic">
                             <div class="spec-item">
@@ -272,7 +274,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN B2B (LÍNEA B) -->
+    <!-- SECCIÓN B2B -->
     <section id="agencia" class="b2b-modern-section">
         <div class="container-pro">
             <div class="section-header apple-reveal">
@@ -282,8 +284,8 @@
                 
                 <div class="b2b-tabs-nav">
                     <button class="tab-btn active" onclick="switchB2BTab('aceleracion', this)">Gestión de ventas</button>
-                    <button class="tab-btn" onclick="switchB2BTab('mapeo', this)">Producción audiovisual</button>
-                    <button class="tab-btn" onclick="switchB2BTab('desarrollo', this)">Identidad y Proyectos</button>
+                    <button class="tab-btn" onclick="switchB2BTab('mapeo', this)"> Producción audiovisual</button>
+                    <button class="tab-btn" onclick="switchB2BTab('desarrollo', this)">Identidad e Proyectos</button>
                     <button class="tab-btn" onclick="switchB2BTab('eventos', this)">Eventos y Lanzamiento</button>
                 </div>
             </div>
@@ -343,10 +345,10 @@
         </div>
     </section>
 
-  <!-- SECCIÓN CONTACTO -->
-    <section id="contacto" class="section-container contact-section" style="background-image: url('img/sobre-nosotros.jpg');">
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="section-container contact-section apple-reveal" style="background-image: url('img/sobre-nosotros.jpg');">
         <div class="overlay-dark"></div>
-        <div class="container-inner relative-z apple-reveal">
+        <div class="container-inner relative-z">
             <h2>Iniciemos una conversación estratégica.</h2>
             <p class="section-subtitle">Conectemos para llevar tu próximo proyecto o inversión al siguiente nivel en el sur de Chile.</p>
             <a href="mailto:grupomhor@gmail.com" class="btn-main">Enviar un Correo Directo</a>
@@ -368,7 +370,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER DEFINITIVO Y EQUILIBRADO -->
     <footer class="footer-section apple-reveal">
         <div class="footer-container">
             <div class="footer-col-logo">
@@ -403,19 +405,22 @@
         </div>
     </footer>
 
-    <!-- WIDGET FAUNA NATIVA -->
+    <!-- WIDGET INTERACTIVO: FAUNA NATIVA DEL SUR -->
     <div class="fauna-widget-container">
+        <!-- Botón Flotante a la Derecha (Arriba de WhatsApp) -->
         <button id="faunaToggleBtn" class="fauna-float-btn" aria-label="Explorar sonidos de aves del sur de Chile">
             <span>Aves del sur</span>
         </button>
 
+        <!-- Panel Desplegable Minimalista -->
         <div id="faunaModal" class="fauna-modal-panel">
             <div class="fauna-header">
                 <h4>Biodiversidad</h4>
-                <p>Escucha la esencia de nuestros bosques nativos e imagina despertar con estos sonidos</p>
+                <p>Escucha la esencia de nuestros bosques nativos</p>
                 <button id="faunaCloseBtn" class="fauna-close">&times;</button>
             </div>            
             <div class="fauna-list">
+                <!-- Ave 3: Chucao -->
                 <div class="fauna-item" data-audio="chucao">
                     <img src="img/aves/chucao.jpg" alt="Chucao" class="fauna-avatar">
                     <div class="fauna-info">
@@ -424,6 +429,7 @@
                     </div>
                     <button class="play-bird-btn" aria-label="Reproducir Chucao">▶</button>
                 </div>
+                <!-- Ave 1: Pitío -->
                 <div class="fauna-item" data-audio="pitio">
                     <img src="img/aves/pitio.jpg" alt="Carpintero Pitío" class="fauna-avatar">
                     <div class="fauna-info">
@@ -432,6 +438,8 @@
                     </div>
                     <button class="play-bird-btn" aria-label="Reproducir Pitío">▶</button>
                 </div>
+
+                <!-- Ave 2: Zorzal -->
                 <div class="fauna-item" data-audio="zorzal">
                     <img src="img/aves/zorzal.jpg" alt="Zorzal" class="fauna-avatar">
                     <div class="fauna-info">
@@ -440,6 +448,8 @@
                     </div>
                     <button class="play-bird-btn" aria-label="Reproducir Zorzal">▶</button>
                 </div>
+
+                <!-- Ave 4: Rayadito -->
                 <div class="fauna-item" data-audio="rayadito">
                     <img src="img/aves/rayadito.jpg" alt="Rayadito" class="fauna-avatar">
                     <div class="fauna-info">
@@ -448,10 +458,12 @@
                     </div>
                     <button class="play-bird-btn" aria-label="Reproducir Rayadito">▶</button>
                 </div>
+
+                <!-- Ave 5: Chercán -->
                 <div class="fauna-item" data-audio="chercan">
                     <img src="img/aves/chercan.jpg" alt="Chercan" class="fauna-avatar">
                     <div class="fauna-info">
-                        <span class="fauna-name">Chercán</span>
+                        <span class="fauna-name">Chercan</span>
                         <span class="fauna-sci">Troglodytes aedon</span>
                     </div>
                     <button class="play-bird-btn" aria-label="Reproducir Chercan">▶</button>
@@ -460,9 +472,10 @@
         </div>
     </div>
 
+    <!-- Elemento de Audio Oculto Dinámico -->
     <audio id="birdAudioPlayer"></audio>
 
-    <!-- WHATSAPP -->
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
     <a href="https://wa.me/56948814357" class="whatsapp-float" target="_blank" aria-label="Contacto de WhatsApp">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
