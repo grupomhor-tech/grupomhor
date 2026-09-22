@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ----------------------------------------------------------
-   CONTROL DEL MENÚ HAMBURGUESA MÓVIL
+   CONTROL DEL MENÚ HAMBURGUESA MÓVIL Y SCROLL OFFSET
    ---------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.getElementById('menuBtn');
@@ -149,4 +149,28 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // Corrección automática de desplazamiento con offset para evitar que el menú tape las secciones
+    const menuItems = document.querySelectorAll('.nav-links a[href^="#"]');
+    
+    menuItems.forEach(link => {
+        link.addEventListener("click", function (e) {
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+            
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                e.preventDefault();
+                const navHeight = 90; // Compensación exacta de la barra de navegación fija
+                const elementPosition = targetSection.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
 });
