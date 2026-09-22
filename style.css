@@ -353,11 +353,15 @@ html {
 /* SECCIÓN B2B CON COMPENSACIÓN DE SCROLL PARA EVITAR QUE EL MENÚ OCULTE EL TÍTULO */ 
 .b2b-modern-section { 
     position: relative;
-    padding: 120px 5% 80px 5%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Fuerza a alinear los elementos hacia arriba */
+    align-items: flex-start;
+    padding: 40px 5% 80px 5%; /* Dejamos el padding superior original o limpio */
     background-color: #050505; 
     overflow: hidden;
-    scroll-margin-top: 110px; /* Compensa la barra fija superior de forma exacta */
-} 
+    scroll-margin-top: 110px; 
+}
 
 .b2b-tabs-nav { 
     position: relative;
