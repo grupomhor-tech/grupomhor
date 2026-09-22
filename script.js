@@ -9,6 +9,7 @@ window.addEventListener("load", () => {
         }, 500); // Se oculta suavemente tras medio segundo (0.5s)
     }
 });
+
 /* ==========================================================
    TU SCRIPT ACTUALIZADO Y EN LÍNEA CON TU AVANCE + WIDGET FAUNA
    ========================================================== */
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Funciones obligatorias para el Modal Estilo Apple
 function openModal() {
-    const modal = document.getElementById('infoModal'); // Asegúrate que tu overlay use id="infoModal" o cambia este ID por el de tu HTML
+    const modal = document.getElementById('infoModal'); 
     if (modal) modal.classList.add('active');
 }
 
@@ -82,7 +83,7 @@ function closeModal() {
     if (modal) modal.classList.remove('active');
 }
 
-// Cerrar si hacen clic fuera de la tarjeta blanca (en el fondo difuminado)
+// Cerrar si hacen clic fuera de la tarjeta blanca
 window.addEventListener('click', function(event) {
     const modal = document.getElementById('infoModal');
     if (modal && event.target === modal) {
@@ -90,9 +91,8 @@ window.addEventListener('click', function(event) {
     }
 });
 
-
 /* ----------------------------------------------------------
-   WIDGET FLOTANTE DE FAUNA SUR Y AUDIOS DE AVES (Añadido a tu avance)
+   WIDGET FLOTANTE DE FAUNA SUR Y AUDIOS DE AVES
    ---------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", function () {
     const faunaToggleBtn = document.getElementById("faunaToggleBtn");
@@ -134,7 +134,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (birdName) {
                     const audioPath = `audio/aves/${birdName}.mp3`;
 
-                    // Pequeño feedback visual de selección en la lista
                     faunaItems.forEach(i => i.style.opacity = "1");
                     this.style.opacity = "0.7";
 

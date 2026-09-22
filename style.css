@@ -185,9 +185,7 @@ html {
     color: #86868b; 
 } 
 
-/* ==========================================================
-   ESTILO APPLE: PROPIEDADES, ZOOM CINEMÁTICO Y GLASSMORPHISM
-   ========================================================== */
+/* PROPIEDADES */ 
 .propiedades-section { 
     position: relative; 
     padding: 100px 5%; 
@@ -216,7 +214,6 @@ html {
     position: relative;
 } 
 
-/* Efecto Lens Flare / Destello de luz sutil en hover sobre Glassmorphism */
 .propiedad-card::after {
     content: '';
     position: absolute;
@@ -248,14 +245,13 @@ html {
     overflow: hidden; 
 } 
 
-/* Efecto de Zoom Cinemático al cargar o interactuar */
 .spatial-image-scale {
     transform: scale(1);
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .propiedad-card:hover .spatial-image-scale {
-    transform: scale(1.06); /* Zoom in tipo Apple Vision Pro / Showcase */
+    transform: scale(1.06);
 }
 
 .carousel img { 
@@ -354,12 +350,13 @@ html {
     transform: translateY(0); 
 } 
 
-/* B2B / SOLUCIONES INMOBILIARIAS */ 
+/* SECCIÓN B2B CON COMPENSACIÓN DE SCROLL PARA EVITAR QUE EL MENÚ OCULTE EL TÍTULO */ 
 .b2b-modern-section { 
     position: relative;
-    padding: 30px 5% 80px 5%; 
+    padding: 40px 5% 80px 5%; 
     background-color: #050505; 
     overflow: hidden;
+    scroll-margin-top: 85px; /* Compensa la barra fija superior de forma exacta */
 } 
 
 .b2b-tabs-nav { 
@@ -991,9 +988,8 @@ html {
     color: #d1d1d6; 
     font-weight: 500; 
 }
-/* ==========================================================
-   SPLASH SCREEN DE CARGA INICIAL (ESTILO APPLE)
-   ========================================================== */
+
+/* SPLASH SCREEN */ 
 .splash-container {
     position: fixed;
     top: 0;
@@ -1018,9 +1014,4 @@ html {
 .splash-logo {
     height: 42px;
     object-fit: contain;
-}
-
-@keyframes splashPulse {
-    0% { transform: scale(0.95); opacity: 0.7; }
-    100% { transform: scale(1.05); opacity: 1; }
 }
