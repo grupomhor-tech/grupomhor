@@ -12,6 +12,11 @@ html {
     scroll-padding-top: 90px; /* Evita que el menú tape el contenido al hacer scroll */
 } 
 
+/* SECCIONES CON ANCLAJE CORREGIDO */
+#agencia, #propiedades, #quienes-somos, #contacto, .b2b-modern-section, .propiedades-section, .about-section, .contact-section {
+    scroll-margin-top: 90px;
+}
+
 /* MENÚ FLOTANTE */ 
 .nav-bar { 
     position: fixed; 
@@ -360,7 +365,7 @@ html {
 /* B2B (LÍNEA B) - ESPACIADO IDÉNTICO */ 
 .b2b-modern-section { 
     position: relative;
-    padding: 120px 5% 80px 5%; /* Ajustado para respetar la barra de navegación fija */
+    padding: 120px 5% 80px 5%; 
     background-color: #050505; 
     overflow: hidden;
 } 
