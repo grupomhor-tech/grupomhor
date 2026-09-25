@@ -1290,12 +1290,182 @@ html {
         margin: 0 auto !important;
         box-sizing: border-box !important;
     }
+/* ==========================================================
+   5. DISEÑO RESPONSIVO Y MENÚ MÓVIL
+   ========================================================== */
+@media (max-width: 900px) {
 
-    .b2b-tab-pane {
-        flex: 0 0 90%;
+    .nav-bar .nav-links {
+        display: none !important;
+    }
+
+    .nav-bar .nav-links.active {
+        display: flex !important;
+        flex-direction: column !important;
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        left: auto !important;        
+        width: 80vw !important;
+        height: 100vh !important;
+        background: rgba(10, 10, 10, 0.96) !important;
+        backdrop-filter: blur(30px) !important;
+        -webkit-backdrop-filter: blur(30px) !important;
+        padding: 90px 30px 40px 30px !important;
+        gap: 12px !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        z-index: 99999 !important;
+        overflow-y: auto !important;
+        box-sizing: border-box !important;
+    }
+
+    .nav-bar .nav-links.active a,
+    .nav-bar .nav-links.active .btn-contacto {
+        font-size: 1.25rem !important;
+        font-weight: 300 !important;
+        color: #a1a1a6 !important;
+        width: 100% !important;
+        text-align: left !important;
+        padding: 14px 0 !important;
+        border: none !important;
+        border-bottom: none !important;
+        background: transparent !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .nav-bar .nav-links.active a:hover,
+    .nav-bar .nav-links.active .btn-contacto:hover {
+        color: #ffffff !important;
+        background: transparent !important;
+    }
+
+    .nav-bar .nav-links.active .menu-close-btn {
+        display: flex !important;
+        position: absolute !important;
+        top: 22px !important;
+        left: 25px !important;
+        right: auto !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: none !important;
+        color: #ffffff !important;
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        font-size: 1.1rem !important;
+        cursor: pointer !important;
+        align-items: center !important;
+        justify-content: center !important;
+        z-index: 100000 !important;
+        transition: background 0.2s ease, transform 0.2s ease !important;
+    }
+
+    .nav-bar .nav-links.active .menu-close-btn:hover {
+        background: rgba(255, 255, 255, 0.2) !important;
+        transform: scale(1.03) !important;
+    }
+
+    .nav-bar .menu-toggle {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 3px !important;
+        background: rgba(40, 40, 40, 0.6) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        border: none !important;
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 50% !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+        z-index: 1000 !important;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .nav-bar .menu-toggle span {
+        display: block !important;
+        width: 16px !important;
+        height: 1.5px !important;
+        background-color: #ffffff !important;
+        border-radius: 2px !important;
+        margin: 0 !important;
+    }
+
+    .nav-bar .menu-toggle:hover {
+        background: rgba(60, 60, 60, 0.8) !important;
+        transform: scale(1.05) !important;
+    }
+
+.footer-container { 
+        display: flex !important;
+        flex-direction: column !important; 
+        text-align: center !important; 
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 35px !important;
+        padding-bottom: 60px !important; 
+        width: 100% !important;
+    }     
+    .social-icons { 
+        justify-content: center !important; 
+    }
+      
+.footer-address-block {
+        justify-self: center !important;
+        transform: none !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+    }
+
+    .b2b-tabs-nav { 
+        display: flex !important; 
+        flex-direction: column !important; 
+        align-items: center !important; 
+        justify-content: center !important; 
+        width: 100% !important; 
+        gap: 12px !important; 
+        padding: 0 20px !important; 
+        box-sizing: border-box !important; 
+    }
+      
+    .b2b-tabs-nav .tab-btn, 
+    .b2b-tabs-nav button { 
+        width: 100% !important; 
+        max-width: 280px !important; 
+        text-align: center !important; 
+        justify-content: center !important; 
+        margin: 0 auto !important; 
+        font-size: 0.9rem !important; 
+        padding: 12px 16px !important; 
+    }
+
+    .apple-metrics-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        padding: 0 20px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+
+    .metric-card {
+        width: 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+.b2b-tab-pane {
+        flex: 0 0 85% !important;
+        width: 85% !important;
+        max-width: 85% !important;
+        box-sizing: border-box !important;
     }
 
     .b2b-card-modern {
-        height: 460px;
+        width: 100% !important;
+        height: 460px !important;
+        box-sizing: border-box !important;
     }
-}
