@@ -6,26 +6,30 @@
     <title>Grupo Mhor | Inversión y Gestión Inmobiliaria</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- Metaetiquetas SEO e Información de la Marca -->
     <meta name="description" content="Inmobiliaria en Pucón y el sur de Chile. Grupo Mhor SpA ofrece inversión, corretaje digital, material audiovisual y marketing para proyectos y desarrollo de activos inmobiliarios de alto nivel.">
     <meta name="keywords" content="Inmobiliaria en Pucón, Grupo Mhor SpA, corretaje en Pucón, propiedades Villarrica, inversión inmobiliaria sur de Chile, contenido audiovisual, marketing inmobiliario B2B">
     <meta name="author" content="Grupo Mhor SpA">
 </head>
 <body>
 
-    <!-- SPLASH SCREEN DE CARGA INICIAL (ESTILO APPLE) -->
     <div id="splashScreen" class="splash-container">
         <div class="splash-logo-wrapper">
             <img src="img/logo-mhor.png" alt="Grupo Mhor" class="splash-logo">
         </div>
     </div>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
     <header class="nav-bar">
         <div class="logo-container">
             <img src="img/logo-mhor.png" alt="Grupo Mhor" class="site-logo">
         </div>
-        <ul class="nav-links">
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+                <ul class="nav-links" id="navLinks">
+
+                <button class="menu-close-btn" aria-label="Volver">&#x2039;</button>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#quienes-somos">Quiénes Somos</a></li>
             <li><a href="#propiedades">Propiedades</a></li>
@@ -33,10 +37,8 @@
             <li><a href="#contacto" class="btn-contacto">Contacto</a></li>
         </ul>
     </header>
-
-    <!-- SECCIÓN HERO (PORTADA) -->
-    <section id="inicio" class="hero-section" style="background-image: url('img/portada.jpg');">
         <div class="hero-overlay"></div>
+    <section id="inicio" class="hero-section" style="background-image: url('img/portada.jpg');">
         <div class="hero-content">
             <h1>Inversión y gestión inmobiliaria de alto nivel.</h1>
             <p>Especialistas en ventas digitales, marketing para proyectos y desarrollo de activos en Pucón y el sur de Chile.</p>
@@ -48,7 +50,6 @@
         </div>
     </section>
 
-    <!-- SECCIÓN QUIÉNES SOMOS -->
     <section id="quienes-somos" class="about-section" style="background-image: url('img/sobre-nosotros.jpg');">
         <div class="hero-overlay"></div>
         
@@ -59,18 +60,8 @@
         </div>
 
         <button class="apple-plus-btn" onclick="openModal()" aria-label="Ver más información">+</button>
-
-        <div id="infoModal" class="apple-modal-overlay">
-            <div class="apple-modal-card">
-                <button class="apple-modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
-                <span class="modal-category">NUESTRA FILOSOFÍA</span>
-                <h2>Pasión por lo que hacemos.</h2>
-                <p>En Grupo Mhor no solo gestionamos propiedades; entendemos la esencia de La Araucanía y acompañamos a cada cliente con transparencia y desarrollo estratégico. Respaldados por una sólida trayectoria en la gran industria minera —teniendo la oportunidad de trabajar con referentes como Escondida BHP, Sierra Gorda SCM, El Abra SCM, entre otras—, trasladamos esa excelencia, seguridad y compromiso a cada proyecto que realizamos.</p>
-            </div>
-        </div>
     </section>
         
-    <!-- SECCIÓN PROPIEDADES DESTACADAS -->
     <section id="propiedades" class="propiedades-section">
         <div class="container-pro">
             <div class="section-header apple-reveal">
@@ -80,7 +71,6 @@
             </div>
 
             <div class="propiedades-grid">
-                <!-- Propiedad 1 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car1">
                         <span class="card-badge">Terreno</span>
@@ -112,7 +102,6 @@
                     </div>
                 </div>
 
-                <!-- Propiedad 2 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car2">
                         <span class="card-badge">Departamento</span>
@@ -144,7 +133,6 @@
                     </div>
                 </div>
 
-                <!-- Propiedad 3 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car3">
                         <span class="card-badge">Terreno</span>
@@ -155,7 +143,7 @@
                         <button class="next" onclick="moveSlide('car3', 1)">❯</button>
                     </div>
                     <div class="card-content glass-card-effect">
-                        <h3 class="card-title">Oportunidad de Inversión Comercial</h3>
+                        <h3 class="card-title">Oportunidad de Inversión Comercial en Villarrica</h3>
                         
                         <div class="card-specs-futuristic">
                             <div class="spec-item">
@@ -176,7 +164,6 @@
                     </div>
                 </div>
 
-                <!-- Propiedad 4 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car4">
                         <span class="card-badge">Vivienda</span>
@@ -208,7 +195,6 @@
                     </div>
                 </div>
 
-                <!-- Propiedad 5 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car5">
                         <span class="card-badge">Terreno</span>
@@ -240,7 +226,6 @@
                     </div>
                 </div>
 
-                <!-- Propiedad 6 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car6">
                         <span class="card-badge">Disponible</span>
@@ -270,9 +255,8 @@
             </div>
         </div>
     </section>
-        <!-- SECCIÓN B2B -->
-<div id="agencia" style="position: relative; top: -40px; visibility: hidden; pointer-events: none;"></div>
-    <section class="b2b-modern-section">
+
+    <section id="agencia" class="b2b-modern-section">
         <div class="container-pro">
             <div class="section-header apple-reveal">
                 <span class="linea-tag">LÍNEA B: AGENCIA B2B</span>
@@ -291,7 +275,7 @@
                 <div id="aceleracion" class="b2b-tab-pane active">
                     <div class="b2b-card-modern video-wrapper">
                         <video autoplay muted loop playsinline class="bg-video">
-                            <source src="img/drone.mp4" type="video/mp4">
+                            <source src="img/drone1.mp4" type="video/mp4">
                         </video>
                         <div class="overlay-dark"></div>
                         <div class="b2b-inner-text">
@@ -342,9 +326,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO -->
     <section id="contacto" class="section-container contact-section apple-reveal" style="background-image: url('img/sobre-nosotros.jpg');">
-        <div class="overlay-dark"></div>
         <div class="container-inner relative-z">
             <h2>Iniciemos una conversación estratégica.</h2>
             <p class="section-subtitle">Conectemos para llevar tu próximo proyecto o inversión al siguiente nivel en el sur de Chile.</p>
@@ -367,7 +349,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer-section apple-reveal">
         <div class="footer-container">
             <div class="footer-col-logo">
@@ -402,7 +383,6 @@
         </div>
     </footer>
 
-    <!-- WIDGET INTERACTIVO: FAUNA NATIVA DEL SUR -->
     <div class="fauna-widget-container">
         <button id="faunaToggleBtn" class="fauna-float-btn" aria-label="Explorar sonidos de aves del sur de Chile">
             <span>Aves del sur</span>
@@ -460,6 +440,15 @@
     </div>
 
     <audio id="birdAudioPlayer"></audio>
+
+    <div id="infoModal" class="apple-modal-overlay">
+        <div class="apple-modal-card">
+            <button class="apple-modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
+            <span class="modal-category">NUESTRA FILOSOFÍA</span>
+            <h2>Pasión por lo que hacemos.</h2>
+            <p>Trasladamos los estándares de la gran industria minera al corazón de La Araucanía. Nuestra experiencia trabajando con referentes como ESCONDIDA | BHP, Sierra Gorda SCM, El Abra SCM nos enseñó que la experiencia no es negociable. Hoy aplicamos la misma calidad, excelencia y visión estratégica a cada proyecto que realizamos.</p>
+        </div>
+    </div>
 
     <a href="https://wa.me/56948814357" class="whatsapp-float" target="_blank" aria-label="Contacto de WhatsApp">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">

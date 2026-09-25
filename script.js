@@ -11,10 +11,38 @@ window.addEventListener("load", () => {
 });
 
 /* ==========================================================
-   TU SCRIPT ACTUALIZADO Y EN LÍNEA CON TU AVANCE + WIDGET FAUNA
+   CONTROL DEL MENÚ HAMBURGUESA (MÓVIL - TRES LÍNEAS)
    ========================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-// Carrusel general de propiedades
+    if (menuToggle && navLinks) {
+        // Abrir / Cerrar menú al presionar la hamburguesa
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        // Botón de cierre explícito (X) dentro del menú móvil a pantalla completa
+        const closeBtn = navLinks.querySelector('.menu-close-btn');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        }
+
+        // Ocultar el menú móvil automáticamente al hacer clic en cualquier opción de enlace
+        navLinks.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+        });
+    }
+});
+
+/* ==========================================================
+   CARRUSEL GENERAL DE PROPIEDADES
+   ========================================================== */
 function moveSlide(carouselId, direction) {
     const carousel = document.getElementById(carouselId);
     if (!carousel) return;
@@ -38,41 +66,117 @@ function moveSlide(carouselId, direction) {
     }
 }
 
-// Control de pestañas interactivas para la sección B2B
-function switchB2BTab(tabId, btnElement) {
-    const panes = document.querySelectorAll('.b2b-tab-pane');
-    panes.forEach(pane => pane.classList.remove('active'));
+/* ==========================================================
+   CONTROL DE PESTAÑAS Y CARRUSEL HORIZONTAL INTERACTIVO (B2B)
+   ========================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".b2b-content-container");
+    const panes = document.querySelectorAll(".b2b-tab-pane");
+    const buttons = document.querySelectorAll(".b2b-tabs-nav .tab-btn");
 
-    const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
+    if (!container || panes.length === 0 || buttons.length === 0) return;
 
-    const targetPane = document.getElementById(tabId);
-    if (targetPane) {
-        targetPane.classList.add('active');
+    // 1. Función interna para actualizar las clases activas visuales de forma inmediata
+    function updateActiveState(index) {
+        buttons.forEach((btn, idx) => {
+            if (idx === index) {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+
+        panes.forEach((pane, idx) => {
+            if (idx === index) {
+                pane.classList.add("active");
+            } else {
+                pane.classList.remove("active");
+            }
+        });
     }
-    if (btnElement) {
-        btnElement.classList.add('active');
-    }
-}
 
-// EFECTO DINÁMICO AL RITMO DEL SCROLL (FLUIDO TIPO APPLE)
-window.addEventListener("scroll", () => {
-    const revealElements = document.querySelectorAll('.apple-reveal');
-    const windowHeight = window.innerHeight;
-
-    revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 40) {
-            element.classList.add('active');
+    // 2. Sincronización ultrarrápida al hacer scroll horizontal en el carrusel (sin demoras)
+    container.addEventListener("scroll", () => {
+        let scrollLeft = container.scrollLeft;
+        let paneWidth = panes[0].offsetWidth + parseInt(window.getComputedStyle(container).gap || 20);
+        let currentIndex = Math.round(scrollLeft / paneWidth);
+        
+        if (currentIndex >= 0 && currentIndex < panes.length) {
+            updateActiveState(currentIndex);
         }
+    }, { passive: true });
+
+    // 3. Sincronizar al hacer clic en los botones superiores
+    buttons.forEach((btn, index) => {
+        btn.addEventListener("click", () => {
+            updateActiveState(index);
+            const targetPane = panes[index];
+            container.scrollTo({
+                left: targetPane.offsetLeft - container.offsetLeft - (container.clientWidth - targetPane.clientWidth) / 2,
+                behavior: "smooth"
+            });
+        });
     });
 });
 
+// Mantener compatibilidad global por si alguna función externa llama a switchB2BTab
+function switchB2BTab(tabId, btnElement) {
+    const panes = document.querySelectorAll('.b2b-tab-pane');
+    const buttons = document.querySelectorAll('.tab-btn');
+    
+    panes.forEach((pane) => {
+        if (pane.id === tabId) {
+            pane.classList.add('active');
+            const container = document.querySelector(".b2b-content-container");
+            if (container) {
+                container.scrollTo({
+                    left: pane.offsetLeft - container.offsetLeft - (container.clientWidth - pane.clientWidth) / 2,
+                    behavior: "smooth"
+                });
+            }
+        } else {
+            pane.classList.remove('active');
+        }
+    });
+
+    buttons.forEach(btn => {
+        if (btn === btnElement) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+
+/* ==========================================================
+   EFECTO DINÁMICO AL RITMO DEL SCROLL (FLUIDO TIPO APPLE)
+   ========================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-    window.dispatchEvent(new Event('scroll'));
+    const revealElements = document.querySelectorAll('.apple-reveal');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.1
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
 });
 
-// Funciones obligatorias para el Modal Estilo Apple
+/* ==========================================================
+   MODAL ESTILO APPLE
+   ========================================================== */
 function openModal() {
     const modal = document.getElementById('infoModal'); 
     if (modal) modal.classList.add('active');
