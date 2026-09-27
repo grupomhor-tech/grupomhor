@@ -31,6 +31,10 @@ html {
     -webkit-backdrop-filter: blur(20px); 
     z-index: 1000; 
     border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+    will-change: transform, background-color;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 } 
 
 .logo-container {
@@ -62,7 +66,7 @@ html {
     color: #ffffff; 
 } 
 
-/* BOTÓN NAVEGACIÓN CONTACTO - ESTILO UNIFICADO APPLE */
+/* BOTÓN NAVEGACIÓN CONTACTO - ESTILO UNIFICADO APPLE (SIN PARPADEO) */
 .btn-contacto { 
     background: rgba(255, 255, 255, 0.15); 
     color: #ffffff; 
@@ -74,16 +78,20 @@ html {
     border: none;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    transition: transform 0.2s ease, background-color 0.3s ease; /* Especifica background-color */
+    transition: transform 0.2s ease, background-color 0.3s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .btn-contacto:hover { 
     background: rgba(255, 255, 255, 0.25); 
-    transform: translateY(-1px); 
+    transform: translateY(-1px) translateZ(0); 
     color: #ffffff; 
 } 
 
@@ -217,11 +225,13 @@ html {
     z-index: 3;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+    will-change: transform;
+    transform: translateZ(0);
 } 
 
 .btn-main:hover { 
     background: rgba(255, 255, 255, 0.25); 
-    transform: translateY(-1px); 
+    transform: translateY(-1px) translateZ(0); 
 } 
 
 /* BOTÓN SECUNDARIO */
@@ -243,11 +253,13 @@ html {
     justify-content: center;
     position: relative;
     z-index: 3;
+    will-change: transform;
+    transform: translateZ(0);
 } 
 
 .btn-sec:hover { 
     background: rgba(255, 255, 255, 0.1); 
-    transform: translateY(-1px); 
+    transform: translateY(-1px) translateZ(0); 
 } 
 
 .container-pro { 
@@ -379,11 +391,12 @@ html {
     border: none; 
 } 
 
+/* FLECHAS DEL CARRUSEL CORREGIDAS (NO SE CORTAN) */
 .carousel button { 
     position: absolute; 
     top: 50%; 
     transform: translateY(-50%); 
-    background: rgba(0, 0, 0, 0.6); 
+    background: rgba(0, 0, 0, 0.65); 
     color: white; 
     border: none; 
     width: 36px; 
@@ -395,8 +408,8 @@ html {
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    opacity: 0; 
-    transition: opacity 0.3s ease, background 0.3s ease; 
+    opacity: 0.85; 
+    transition: opacity 0.3s ease, background 0.3s ease, transform 0.2s ease; 
 } 
 
 .carousel:hover button { 
@@ -404,11 +417,12 @@ html {
 } 
 
 .carousel button:hover { 
-    background: rgba(255, 255, 255, 0.2); 
+    background: rgba(255, 255, 255, 0.3); 
+    transform: translateY(-50%) scale(1.05);
 } 
 
-.carousel .prev { left: 12px; } 
-.carousel .next { right: 12px; } 
+.carousel .prev { left: 15px !important; } 
+.carousel .next { right: 15px !important; } 
 
 .card-content { 
     padding: 24px; 
@@ -432,14 +446,18 @@ html {
     margin-top: auto; 
 } 
 
-.apple-reveal { 
+/* ANIMACIÓN APPLE REVEAL (INCLUYE INICIEMOS UNA CONVERSACIÓN) */
+.apple-reveal,
+.reveal-on-scroll { 
     opacity: 0; 
     transform: translateY(40px); 
     transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), transform 1.2s cubic-bezier(0.25, 1, 0.5, 1); 
     will-change: opacity, transform; 
 } 
 
-.apple-reveal.active { 
+.apple-reveal.active,
+.reveal-on-scroll.active,
+.reveal-on-scroll.is-visible { 
     opacity: 1; 
     transform: translateY(0); 
 } 
@@ -455,6 +473,7 @@ html {
     scroll-margin-top: 55px;
 } 
 
+/* CONTENEDOR SELECTOR DE CATEGORÍAS CORREGIDO Y ALINEADO */
 .b2b-tabs-nav { 
     position: relative;
     z-index: 3;
@@ -462,23 +481,29 @@ html {
     justify-content: center; 
     align-items: center;
     flex-wrap: wrap; 
-    gap: 10px; 
+    gap: 12px; 
     margin: 15px auto 30px auto; 
-    max-width: 600px;
+    max-width: 800px;
     padding: 0 15px;
+    width: 100%;
 } 
 
 .tab-btn { 
     background: rgba(255, 255, 255, 0.05); 
     border: none; 
     color: #a1a1a6; 
-    padding: 8px 20px; 
+    padding: 9px 22px; 
     border-radius: 980px; 
     font-size: 0.85rem; 
     font-weight: 500; 
     cursor: pointer; 
     backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
     transition: all 0.3s ease; 
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 } 
 
 .tab-btn:hover { 
@@ -744,10 +769,14 @@ html {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
     z-index: 9999; 
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease; 
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 } 
 
 .whatsapp-float:hover { 
-    transform: scale(1.1); 
+    transform: scale(1.1) translateZ(0); 
     background-color: #20ba5a; 
 } 
 
@@ -940,37 +969,41 @@ html {
     z-index: 3;
 } 
 
-/* BOTÓN "VER MÁS" / "+" EN QUIÉNES SOMOS - ESTILO UNIFICADO APPLE */
+/* BOTÓN CÍRCULO PERFECTO CON EL SIGNO "+" EN QUIÉNES SOMOS */
 .about-section .apple-plus-btn {
     position: relative;
     bottom: auto;
     left: auto;
-    transform: none;
+    transform: translateZ(0);
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: none;
     color: #ffffff;
-    padding: 9px 22px;
-    border-radius: 980px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-size: 1.2rem;
+    font-weight: 300;
     cursor: pointer;
     transition: transform 0.2s ease, background 0.3s ease;
     z-index: 10;
-    margin-top: 20px;
+    margin: 20px auto 0 auto;
     text-decoration: none;
     box-shadow: none;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .about-section .apple-plus-btn:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.28);
     color: #ffffff;
-    transform: translateY(-1px);
+    transform: scale(1.08) translateZ(0);
 }
 
 .apple-modal-overlay {
@@ -1245,24 +1278,29 @@ html {
         transform: scale(1.03);
     }
 
-.nav-bar .menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-    background: rgba(40, 40, 40, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: none;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1000;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}  
+    .nav-bar .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3px;
+        background: rgba(40, 40, 40, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1000;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: transform;
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }  
+    
     .nav-bar .menu-toggle span {
         display: block;
         width: 16px;
@@ -1274,7 +1312,7 @@ html {
 
     .nav-bar .menu-toggle:hover {
         background: rgba(60, 60, 60, 0.8);
-        transform: scale(1.05);
+        transform: scale(1.05) translateZ(0);
     }
 
     .footer-container { 
@@ -1302,24 +1340,20 @@ html {
 
     .b2b-tabs-nav { 
         display: flex; 
-        flex-direction: column; 
+        flex-direction: row; 
         align-items: center; 
         justify-content: center; 
         width: 100%; 
-        gap: 12px; 
-        padding: 0 20px; 
+        gap: 8px; 
+        padding: 0 10px; 
         box-sizing: border-box; 
     }
       
     .b2b-tabs-nav .tab-btn, 
     .b2b-tabs-nav button { 
-        width: 100%; 
-        max-width: 280px; 
-        text-align: center; 
-        justify-content: center; 
-        margin: 0 auto; 
-        font-size: 0.9rem; 
-        padding: 12px 16px; 
+        width: auto; 
+        font-size: 0.8rem; 
+        padding: 8px 14px; 
     }
 
     /* TARJETAS DE MÉTRICAS EN MÓVIL */
