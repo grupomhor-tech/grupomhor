@@ -20,9 +20,8 @@
             <span></span>
             <span></span>
         </button>
-                <ul class="nav-links" id="navLinks">
-
-                <button class="menu-close-btn" aria-label="Volver">&#x2039;</button>
+        <ul class="nav-links" id="navLinks">
+            <button class="menu-close-btn" aria-label="Volver">&#x2039;</button>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#quienes-somos">Quiénes Somos</a></li>
             <li><a href="#propiedades">Propiedades</a></li>
@@ -30,10 +29,13 @@
             <li><a href="#contacto" class="btn-contacto">Contacto</a></li>
         </ul>
     </header>
-        <div class="hero-overlay"></div>
+
+    <div class="hero-overlay"></div>
+
+    <!-- SECCIÓN INICIO -->
     <section id="inicio" class="hero-section" style="background-image: url('img/portada.jpg');">
         <div class="hero-content">
-            <h1>Inversión y gestión inmobiliaria de alto nivel.</h1>
+            <h1 class="section-title">Inversión y gestión inmobiliaria de alto nivel.</h1>
             <p>Especialistas en ventas digitales, marketing para proyectos y desarrollo de activos en Pucón y el sur de Chile.</p>
             
             <div class="hero-buttons">
@@ -43,22 +45,24 @@
         </div>
     </section>
 
+    <!-- SECCIÓN QUIÉNES SOMOS -->
     <section id="quienes-somos" class="about-section" style="background-image: url('img/sobre-nosotros.jpg');">
         <div class="hero-overlay"></div>
         
         <div class="hero-content apple-reveal">
             <span class="linea-tag tag-verde">CONSTRUIMOS SUEÑOS</span>
-            <h1>Expertos en conectar el sur con tu futuro.</h1>
+            <h2 class="section-title">Expertos en conectar el sur con tu futuro.</h2>
             <p>Fusionamos nuestra experiencia, visión de negocios y desarrollo estratégico desde La Araucanía.</p>
         </div>
 
         <button class="apple-plus-btn" onclick="openModal()" aria-label="Ver más información">+</button>
     </section>
         
+    <!-- SECCIÓN PROPIEDADES -->
     <section id="propiedades" class="propiedades-section">
         <div class="container-pro">
             <div class="section-header apple-reveal">
-                <span class="linea-tag">LÍNEA A: PROPTECH BOUTIQUE</span>
+                <span class="linea-tag">LÍNEA A: REAL STATE</span>
                 <h2 class="section-title">Propiedades Destacadas</h2>
                 <p class="section-subtitle">Activos inmobiliarios seleccionados con alta plusvalía en Pucón, Villarrica y La Araucanía.</p>
             </div>
@@ -249,10 +253,11 @@
         </div>
     </section>
 
+    <!-- SECCIÓN AGENCIA B2B -->
     <section id="agencia" class="b2b-modern-section">
         <div class="container-pro">
             <div class="section-header apple-reveal">
-                <span class="linea-tag">LÍNEA B: AGENCIA B2B</span>
+                <span class="linea-tag">LÍNEA B: BUSINESS & MEDIA</span>
                 <h2 class="section-title">Soluciones Inmobiliarias Avanzadas</h2>
                 <p class="section-subtitle">Selecciona una opción para visualizar su contenido.</p>
                 
@@ -319,9 +324,10 @@
         </div>
     </section>
 
+    <!-- SECCIÓN CONTACTO -->
     <section id="contacto" class="section-container contact-section apple-reveal" style="background-image: url('img/sobre-nosotros.jpg');">
         <div class="container-inner relative-z">
-            <h2>Iniciemos una conversación estratégica.</h2>
+            <h2 class="section-title">Iniciemos una conversación estratégica.</h2>
             <p class="section-subtitle">Conectemos para llevar tu próximo proyecto o inversión al siguiente nivel en el sur de Chile.</p>
             <a href="mailto:grupomhor@gmail.com" class="btn-main">Enviar un Correo Directo</a>
 
@@ -386,7 +392,7 @@
                 <h4>Biodiversidad</h4>
                 <p>Escucha la esencia de nuestros bosques nativos</p>
                 <button id="faunaCloseBtn" class="fauna-close">&times;</button>
-            </div>            
+            </div>
             <div class="fauna-list">
                 <div class="fauna-item" data-audio="chucao">
                     <img src="img/aves/chucao.jpg" alt="Chucao" class="fauna-avatar">
