@@ -5,10 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo Mhor | Inversión y Gestión Inmobiliaria</title>
     <link rel="stylesheet" href="style.css">
-    
+
     <meta name="description" content="Inmobiliaria en Pucón y el sur de Chile. Grupo Mhor SpA ofrece inversión, corretaje digital, material audiovisual y marketing para proyectos y desarrollo de activos inmobiliarios de alto nivel.">
     <meta name="keywords" content="Inmobiliaria en Pucón, Grupo Mhor SpA, corretaje en Pucón, propiedades Villarrica, inversión inmobiliaria sur de Chile, contenido audiovisual, marketing inmobiliario B2B">
     <meta name="author" content="Grupo Mhor SpA">
+
+    <!-- AQUÍ SE AGREGAN LAS LÍNEAS NUEVAS -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.grupomhor.cl/">
+    <meta property="og:title" content="Grupo Mhor | Inversión y Gestión Inmobiliaria">
+    <meta property="og:description" content="Especialistas en ventas digitales, marketing para proyectos y desarrollo de activos en Pucón y el sur de Chile.">
+    <meta property="og:image" content="https://www.grupomhor.cl/img/sobre-nosotros.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.grupomhor.cl/">
+    <meta name="twitter:title" content="Grupo Mhor | Inversión y Gestión Inmobiliaria">
+    <meta name="twitter:description" content="Especialistas en ventas digitales, marketing para proyectos y desarrollo de activos en Pucón y el sur de Chile.">
+    <meta name="twitter:image" content="https://www.grupomhor.cl/img/sobre-nosotros.jpg">
 </head>
 <body>
     <header class="nav-bar">
@@ -20,8 +35,8 @@
             <span></span>
             <span></span>
         </button>
-        <ul class="nav-links" id="navLinks">
-            <button class="menu-close-btn" aria-label="Volver">&#x2039;</button>
+            <ul class="nav-links" id="navLinks">
+            <li><button class="menu-close-btn" aria-label="Volver">&#x2039;</button></li>
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#quienes-somos">Quiénes Somos</a></li>
             <li><a href="#propiedades">Propiedades</a></li>
@@ -30,10 +45,9 @@
         </ul>
     </header>
 
-    <div class="hero-overlay"></div>
-
     <!-- SECCIÓN INICIO -->
     <section id="inicio" class="hero-section" style="background-image: url('img/portada.jpg');">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="section-title">Inversión y gestión inmobiliaria de alto nivel.</h1>
             <p>Especialistas en ventas digitales, marketing para proyectos y desarrollo de activos en Pucón y el sur de Chile.</p>
@@ -62,12 +76,13 @@
     <section id="propiedades" class="propiedades-section">
         <div class="container-pro">
             <div class="section-header apple-reveal">
-                <span class="linea-tag">LÍNEA A: REAL STATE</span>
+                <span class="linea-tag">LÍNEA A: REAL ESTATE</span>
                 <h2 class="section-title">Propiedades Destacadas</h2>
                 <p class="section-subtitle">Activos inmobiliarios seleccionados con alta plusvalía en Pucón, Villarrica y La Araucanía.</p>
             </div>
 
             <div class="propiedades-grid">
+                <!-- Propiedad 1 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car1">
                         <span class="card-badge">Terreno</span>
@@ -99,6 +114,7 @@
                     </div>
                 </div>
 
+                <!-- Propiedad 2 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car2">
                         <span class="card-badge">Departamento</span>
@@ -130,6 +146,7 @@
                     </div>
                 </div>
 
+                <!-- Propiedad 3 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car3">
                         <span class="card-badge">Terreno</span>
@@ -161,6 +178,7 @@
                     </div>
                 </div>
 
+                <!-- Propiedad 4 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car4">
                         <span class="card-badge">Vivienda</span>
@@ -192,6 +210,7 @@
                     </div>
                 </div>
 
+                <!-- Propiedad 5 -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car5">
                         <span class="card-badge">Terreno</span>
@@ -223,6 +242,7 @@
                     </div>
                 </div>
 
+                <!-- Propiedad 6 (Recuerda rellenar los datos faltantes) -->
                 <div class="propiedad-card apple-reveal spatial-card-wrapper">
                     <div class="carousel spatial-image-scale" id="car6">
                         <span class="card-badge">Disponible</span>
@@ -233,12 +253,12 @@
                         <button class="next" onclick="moveSlide('car6', 1)">❯</button>
                     </div>
                     <div class="card-content glass-card-effect">
-                        <h3 class="card-title">Exclusivo</h3>
+                        <h3 class="card-title">Propiedad Exclusiva</h3>
                         
                         <div class="card-specs-futuristic">
                             <div class="spec-item">
                                 <svg viewBox="0 0 24 24"><path d="M21 3H3v18h18V3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
-                                <span>m²</span>
+                                <span>Consultar m²</span>
                             </div>
                             <div class="spec-item">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -246,7 +266,7 @@
                             </div>
                         </div>
 
-                        <div class="card-price">UF</div>
+                        <div class="card-price">Consultar UF</div>
                     </div>
                 </div>
             </div>
@@ -348,6 +368,7 @@
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer-section apple-reveal">
         <div class="footer-container">
             <div class="footer-col-logo">
@@ -382,6 +403,7 @@
         </div>
     </footer>
 
+    <!-- WIDGET FAUNA -->
     <div class="fauna-widget-container">
         <button id="faunaToggleBtn" class="fauna-float-btn" aria-label="Explorar sonidos de aves del sur de Chile">
             <span>Aves del sur</span>
@@ -390,7 +412,7 @@
         <div id="faunaModal" class="fauna-modal-panel">
             <div class="fauna-header">
                 <h4>Biodiversidad</h4>
-                <p>Escucha la esencia de nuestros bosques nativos</p>
+                <p>Conecta con la esencia de nuestros bosques nativos</p>
                 <button id="faunaCloseBtn" class="fauna-close">&times;</button>
             </div>
             <div class="fauna-list">
@@ -427,12 +449,12 @@
                     <button class="play-bird-btn" aria-label="Reproducir Rayadito">▶</button>
                 </div>
                 <div class="fauna-item" data-audio="chercan">
-                    <img src="img/aves/chercan.jpg" alt="Chercan" class="fauna-avatar">
+                    <img src="img/aves/chercan.jpg" alt="Chercán" class="fauna-avatar">
                     <div class="fauna-info">
-                        <span class="fauna-name">Chercan</span>
+                        <span class="fauna-name">Chercán</span>
                         <span class="fauna-sci">Troglodytes aedon</span>
                     </div>
-                    <button class="play-bird-btn" aria-label="Reproducir Chercan">▶</button>
+                    <button class="play-bird-btn" aria-label="Reproducir Chercán">▶</button>
                 </div>
             </div>
         </div>
@@ -440,6 +462,7 @@
 
     <audio id="birdAudioPlayer"></audio>
 
+    <!-- MODAL INFORMACIÓN -->
     <div id="infoModal" class="apple-modal-overlay">
         <div class="apple-modal-card">
             <button class="apple-modal-close" onclick="closeModal()" aria-label="Cerrar">&times;</button>
@@ -449,6 +472,7 @@
         </div>
     </div>
 
+    <!-- BOTÓN WHATSAPP -->
     <a href="https://wa.me/56948814357" class="whatsapp-float" target="_blank" aria-label="Contacto de WhatsApp">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
