@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================
-   EFECTO ZOOM Y RECORRIDO HERO (AMPLIO Y PANORÁMICO)
+   EFECTO ZOOM Y RECORRIDO HERO (PANORÁMICO EXTENDIDO)
    ========================================================== */
 let ticking = false;
 
@@ -62,21 +62,21 @@ window.addEventListener('scroll', () => {
             const heroBg = document.getElementById('heroBg');
             if (heroBg) {
                 const scrollPosition = window.scrollY || document.documentElement.scrollTop;
-                const maxScroll = window.innerHeight;
+                // Extendemos el límite del efecto a 1.8 veces la altura de la pantalla para que dure más recorrido
+                const maxScroll = window.innerHeight * 1.8;
 
                 if (scrollPosition <= maxScroll) {
                     const progress = scrollPosition / maxScroll;
 
-                    // Detectar si es pantalla pequeña (celular) para dar mayor amplitud panorámica
                     const isMobile = window.innerWidth <= 900;
 
-                    // En celular aumentamos el zoom y el recorrido lateral para que se note fluido y panorámico
-                    const scaleFactor = isMobile ? 0.35 : 0.25;
-                    const translateFactor = isMobile ? 120 : 60; // El doble de recorrido horizontal en móvil
+                    // Mayor factor de zoom y recorrido horizontal ampliado para que abarque toda la vista
+                    const scaleFactor = isMobile ? 0.55 : 0.35;
+                    const translateFactor = isMobile ? 220 : 100;
 
                     const scale = 1 + (progress * scaleFactor);
                     const translateX = progress * translateFactor;
-                    const rotate = progress * (isMobile ? 2.5 : 1.5);
+                    const rotate = progress * (isMobile ? 3.5 : 1.5);
 
                     heroBg.style.transform = `scale(${scale}) translateX(${translateX}px) rotate(${rotate}deg)`;
                 }
