@@ -54,30 +54,38 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ==========================================================
    EFECTO ZOOM Y RECORRIDO HERO (ALPINAHOUSE STYLE) AL HACER SCROLL
    ========================================================== */
+let ticking = false;
+
 window.addEventListener('scroll', () => {
-    const heroBg = document.getElementById('heroBg');
-    if (!heroBg) return;
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const heroBg = document.getElementById('heroBg');
+            if (heroBg) {
+                const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+                const maxScroll = window.innerHeight; // Distancia en la que se desarrolla el efecto (1 pantalla)
 
-    const scrollPosition = window.scrollY;
-    const maxScroll = window.innerHeight; // Distancia en la que se desarrolla el efecto (1 pantalla)
+                if (scrollPosition <= maxScroll) {
+                    // Porcentaje de progreso del scroll (de 0 al 1)
+                    const progress = scrollPosition / maxScroll;
 
-    if (scrollPosition <= maxScroll) {
-        // Porcentaje de progreso del scroll (de 0 a 1)
-        const progress = scrollPosition / maxScroll;
+                    // Zoom progresivo (de 1.0 a 1.25)
+                    const scale = 1 + progress * 0.25;
 
-        // Zoom progresivo (de 1.0 a 1.25)
-        const scale = 1 + progress * 0.25;
+                    // Desplazamiento horizontal de izquierda a derecha (0px a 60px)
+                    const translateX = progress * 60;
 
-        // Desplazamiento horizontal de izquierda a derecha (0px a 60px)
-        const translateX = progress * 60;
+                    // Ligera rotación estética opcional (0deg a 1.5deg)
+                    const rotate = progress * 1.5;
 
-        // Ligera rotación estética opcional (0deg a 1.5deg)
-        const rotate = progress * 1.5;
-
-        // Aplicar la transformación de manera fluida
-        heroBg.style.transform = `scale(${scale}) translateX(${translateX}px) rotate(${rotate}deg)`;
+                    // Aplicar la transformación de manera fluida y compatible con móviles
+                    heroBg.style.transform = `scale(${scale}) translateX(${translateX}px) rotate(${rotate}deg)`;
+                }
+            }
+            ticking = false;
+        });
+        ticking = true;
     }
-});
+}, { passive: true });
 
 /* ==========================================================
    CARRUSEL GENERAL DE PROPIEDADES
