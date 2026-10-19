@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================
-   EFECTO ZOOM HERO CENTRADO (SIN DESPLAZAMIENTO LATERAL)
+   EFECTO BARRIDO PANORÁMICO CINEMÁTICO (IZQUIERDA A DERECHA)
    ========================================================== */
 let ticking = false;
 
@@ -67,12 +67,13 @@ window.addEventListener('scroll', () => {
                 if (scrollPosition <= maxScroll) {
                     const progress = scrollPosition / maxScroll;
 
-                    // Zoom exclusivamente centrado (de 1.0 a 1.25)
-                    const scale = 1 + (progress * 0.25);
+                    // Mover horizontalmente desde -5% (izquierda) hasta +5% (derecha)
+                    const translateX = -5 + (progress * 10); 
+                    
+                    // Un ligero toque de zoom adicional progresivo para mayor profundidad (de 1.25 a 1.35)
+                    const scale = 1.25 + (progress * 0.10);
 
-                    // Aplicar escala fija centrada sin translate ni rotate
-                    heroBg.style.transformOrigin = 'center center';
-                    heroBg.style.transform = `scale(${scale})`;
+                    heroBg.style.transform = `scale(${scale}) translateX(${translateX}%)`;
                 }
             }
             ticking = false;
@@ -80,7 +81,6 @@ window.addEventListener('scroll', () => {
         ticking = true;
     }
 }, { passive: true });
-
 /* ==========================================================
    CARRUSEL GENERAL DE PROPIEDADES
    ========================================================== */

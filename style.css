@@ -38,12 +38,13 @@ html {
     height: 100%;
     background-image: url('img/portada.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     transform-origin: center center;
     will-change: transform;
     transition: transform 0.1s ease-out;
     z-index: 1;
-    transform: translateZ(0);
+    /* Escala inicial de seguridad para dar margen al barrido lateral sin bordes negros */
+    transform: scale(1.25) translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
