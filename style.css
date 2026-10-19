@@ -15,7 +15,7 @@ html {
 } 
 
 /* ==========================================================
-   ESTILOS NUEVOS: EFECTO ZOOM Y RECORRIDO HERO (ALPINAHOUSE STYLE)
+   ESTILOS NUEVOS: PORTADA FIJA Y ESTABLE (SIN PARPADEO)
    ========================================================== */
 .hero-section {
     position: relative;
@@ -39,11 +39,8 @@ html {
     background-image: url('img/portada.jpg');
     background-size: cover;
     background-position: center center;
-    transform-origin: center center;
-    will-change: transform;
-    transition: transform 0.1s ease-out;
     z-index: 1;
-    transform: scale(1.25) translateZ(0);
+    transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
@@ -1189,14 +1186,6 @@ html {
    ========================================================== */
 @media (max-width: 900px) {
 
-    /* HERO FIJO Y ESTABLE EN MÓVIL (ESTÁTICO Y SIN MOVIMIENTOS) */
-    .hero-bg {
-        transform: scale(1.15) translateZ(0) !important;
-        animation: none !important;
-        -webkit-animation: none !important;
-        transition: none !important;
-    }
-
     .hero-content h1, 
     .about-section h1,
     .contact-section h2,
@@ -1369,7 +1358,6 @@ html {
         width: 100%;
     }
 
-    /* BOTONES B2B EN MÓVIL (CUADRÍCULA 2X2 CENTRADA) */
     .b2b-tabs-nav { 
         display: flex; 
         flex-direction: row; 
