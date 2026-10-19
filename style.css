@@ -470,7 +470,7 @@ html {
     margin-top: auto; 
 } 
 
-/* ANIMACIÓN APPLE REVEAL (INCLUYE INICIEMOS UNA CONVERSACIÓN) */
+/* ANIMACIÓN APPLE REVEAL (RESTAURADA Y BLINDADA) */
 .apple-reveal,
 .reveal-on-scroll { 
     opacity: 0; 
@@ -1189,11 +1189,12 @@ html {
    ========================================================== */
 @media (max-width: 900px) {
 
-    /* HERO FIJO Y ESTABLE EN MÓVIL (SIN BUCLES NI TIRONES DE VIDEO) */
+    /* HERO FIJO Y ESTABLE EN MÓVIL (ESTÁTICO Y SIN MOVIMIENTOS) */
     .hero-bg {
         transform: scale(1.15) translateZ(0) !important;
         animation: none !important;
         -webkit-animation: none !important;
+        transition: none !important;
     }
 
     .hero-content h1, 
