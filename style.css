@@ -43,7 +43,6 @@ html {
     will-change: transform;
     transition: transform 0.1s ease-out;
     z-index: 1;
-    /* Escala inicial de seguridad para dar margen al barrido lateral sin bordes negros */
     transform: scale(1.25) translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
@@ -1190,18 +1189,28 @@ html {
    ========================================================== */
 @media (max-width: 900px) {
 
-    /* ANIMACIÓN CSS NATIVA ULTRA FLUIDA PARA MÓVIL (SIN TIRONES) */
+    /* ANIMACIÓN CSS NATIVA ULTRA FLUIDA PARA MÓVIL (CORRECTAMENTE ENLAZADA) */
     .hero-bg {
-        animation: mobilePanZoom 14s ease-in-out infinite alternate !important;
-        transform: none !important;
+        animation: mobilePanZoom 12s ease-in-out infinite alternate !important;
+        -webkit-animation: mobilePanZoom 12s ease-in-out infinite alternate !important;
+        will-change: transform !important;
     }
 
     @keyframes mobilePanZoom {
         0% {
-            transform: scale(1.15) translateX(0%);
+            transform: scale(1.15) translateX(0%) translateZ(0);
         }
         100% {
-            transform: scale(1.35) translateX(-5%);
+            transform: scale(1.35) translateX(-6%) translateZ(0);
+        }
+    }
+
+    @-webkit-keyframes mobilePanZoom {
+        0% {
+            -webkit-transform: scale(1.15) translateX(0%) translateZ(0);
+        }
+        100% {
+            -webkit-transform: scale(1.35) translateX(-6%) translateZ(0);
         }
     }
 
