@@ -39,6 +39,7 @@ html {
     background-image: url('img/portada.jpg');
     background-size: cover;
     background-position: center;
+    transform-origin: center center;
     will-change: transform;
     transition: transform 0.1s ease-out;
     z-index: 1;
