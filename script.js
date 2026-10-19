@@ -52,11 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================
-   EFECTO BARRIDO PANORÁMICO CINEMÁTICO (IZQUIERDA A DERECHA)
+   EFECTO BARRIDO CINEMÁTICO (SOLO ESCRITORIO / DESKTOP)
    ========================================================== */
 let ticking = false;
 
 window.addEventListener('scroll', () => {
+    // Si es móvil, no ejecutamos nada en JS para dejar que el CSS actúe libre y fluido
+    if (window.innerWidth <= 900) return;
+
     if (!ticking) {
         window.requestAnimationFrame(() => {
             const heroBg = document.getElementById('heroBg');
@@ -66,11 +69,7 @@ window.addEventListener('scroll', () => {
 
                 if (scrollPosition <= maxScroll) {
                     const progress = scrollPosition / maxScroll;
-
-                    // Mover horizontalmente desde -5% (izquierda) hasta +5% (derecha)
                     const translateX = -5 + (progress * 10); 
-                    
-                    // Un ligero toque de zoom adicional progresivo para mayor profundidad (de 1.25 a 1.35)
                     const scale = 1.25 + (progress * 0.10);
 
                     heroBg.style.transform = `scale(${scale}) translateX(${translateX}%)`;

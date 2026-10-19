@@ -1190,6 +1190,21 @@ html {
    ========================================================== */
 @media (max-width: 900px) {
 
+    /* ANIMACIÓN CSS NATIVA ULTRA FLUIDA PARA MÓVIL (SIN TIRONES) */
+    .hero-bg {
+        animation: mobilePanZoom 14s ease-in-out infinite alternate !important;
+        transform: none !important;
+    }
+
+    @keyframes mobilePanZoom {
+        0% {
+            transform: scale(1.15) translateX(0%);
+        }
+        100% {
+            transform: scale(1.35) translateX(-5%);
+        }
+    }
+
     .hero-content h1, 
     .about-section h1,
     .contact-section h2,
@@ -1362,7 +1377,7 @@ html {
         width: 100%;
     }
 
-    /* BOTONES B2B EN MÓVIL (DOS FILAS PERFECTAMENTE CENTRADAS Y ORDENADAS) */
+    /* BOTONES B2B EN MÓVIL (CUADRÍCULA 2X2 CENTRADA) */
     .b2b-tabs-nav { 
         display: flex; 
         flex-direction: row; 
@@ -1378,14 +1393,13 @@ html {
     .b2b-tabs-nav .tab-btn { 
         font-size: 0.72rem; 
         padding: 8px 12px; 
-        flex: 1 1 calc(50% - 12px); /* Obliga a distribuirse en una cuadrícula limpia de 2x2 */
+        flex: 1 1 calc(50% - 12px);
         max-width: 165px;
         text-align: center;
-        white-space: normal; /* Permite salto de línea interno si es necesario */
+        white-space: normal;
         line-height: 1.2;
     }
 
-    /* TARJETAS DE MÉTRICAS EN MÓVIL */
     .apple-metrics-grid {
         flex-direction: column;
         align-items: center;
