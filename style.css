@@ -496,14 +496,14 @@ html {
     scroll-margin-top: 55px;
 } 
 
-/* CONTENEDOR SELECTOR DE CATEGORÍAS (EN 1 SOLA FILA CONTINUA) */
+/* CONTENEDOR SELECTOR DE CATEGORÍAS (EN ESCRITORIO: 1 SOLA FILA) */
 .b2b-tabs-nav { 
     position: relative;
     z-index: 3;
     display: flex; 
     justify-content: center; 
     align-items: center;
-    flex-wrap: nowrap; /* Mantiene los 4 botones en una sola fila continua */
+    flex-wrap: nowrap; 
     gap: 8px; 
     margin: 15px auto 30px auto; 
     max-width: 100%;
@@ -523,7 +523,7 @@ html {
     backdrop-filter: blur(10px); 
     -webkit-backdrop-filter: blur(10px);
     transition: all 0.3s ease; 
-    white-space: nowrap; /* Evita que el texto de los botones se rompa en dos líneas */
+    white-space: nowrap;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1360,25 +1360,27 @@ html {
         width: 100%;
     }
 
-    /* BOTONES B2B EN MÓVIL (UNA SOLA FILA HORIZONTAL, REDUCIDOS) */
+    /* BOTONES B2B EN MÓVIL (DOS FILAS PERFECTAMENTE CENTRADAS Y ORDENADAS) */
     .b2b-tabs-nav { 
         display: flex; 
         flex-direction: row; 
-        flex-wrap: nowrap !important;
+        flex-wrap: wrap !important; 
         align-items: center; 
         justify-content: center; 
         width: 100%; 
-        gap: 5px; 
-        padding: 0 5px; 
+        gap: 8px; 
+        padding: 0 15px; 
         box-sizing: border-box; 
-        overflow-x: auto; /* Permite un desplazamiento suave horizontal si la pantalla es muy pequeña */
-        scrollbar-width: none;
     }
       
     .b2b-tabs-nav .tab-btn { 
-        font-size: 0.68rem; 
-        padding: 7px 10px; 
-        flex-shrink: 0;
+        font-size: 0.72rem; 
+        padding: 8px 12px; 
+        flex: 1 1 calc(50% - 12px); /* Obliga a distribuirse en una cuadrícula limpia de 2x2 */
+        max-width: 165px;
+        text-align: center;
+        white-space: normal; /* Permite salto de línea interno si es necesario */
+        line-height: 1.2;
     }
 
     /* TARJETAS DE MÉTRICAS EN MÓVIL */
