@@ -11,24 +11,20 @@ window.addEventListener("load", () => {
 });
 
 /* ==========================================================
-   CONTROL DEL MENÚ Y BOTÓN CONTACTO (SIN PARPADEO AL RECARGAR)
+   CONTROL DEL MENÚ Y BOTÓN CONTACTO
    ========================================================== */
-// Ejecución inmediata al construir el DOM para evitar saltos visuales al actualizar
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
     if (menuToggle && navLinks) {
-        // Asegurarse de quitar la clase active al recargar la página por si el navegador guardó el estado del DOM
         navLinks.classList.remove("active");
 
-        // Abrir / Cerrar menú al presionar la hamburguesa
         menuToggle.addEventListener("click", (e) => {
             e.stopPropagation();
             navLinks.classList.toggle("active");
         });
 
-        // Botón de cierre explícito (X)
         const closeBtn = navLinks.querySelector(".menu-close-btn");
         if (closeBtn) {
             closeBtn.addEventListener("click", (e) => {
@@ -38,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Delegación limpia de eventos para el botón Contacto y enlaces del menú
     if (navLinks) {
         navLinks.addEventListener("click", (e) => {
             const link = e.target.closest("a, button, .btn-contacto");
@@ -52,12 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================
-   EFECTO BARRIDO CINEMÁTICO (SOLO ESCRITORIO / DESKTOP)
+   EFECTO HERO (SOLO ESCRITORIO - ESTABLE Y FINO)
    ========================================================== */
 let ticking = false;
 
 window.addEventListener('scroll', () => {
-    // Si es móvil, no ejecutamos nada en JS para dejar que el CSS actúe libre y fluido
+    // En móviles no tocamos el transform por scroll para garantizar fluidez total
     if (window.innerWidth <= 900) return;
 
     if (!ticking) {
@@ -69,10 +64,8 @@ window.addEventListener('scroll', () => {
 
                 if (scrollPosition <= maxScroll) {
                     const progress = scrollPosition / maxScroll;
-                    const translateX = -5 + (progress * 10); 
-                    const scale = 1.25 + (progress * 0.10);
-
-                    heroBg.style.transform = `scale(${scale}) translateX(${translateX}%)`;
+                    const scale = 1.15 + (progress * 0.1);
+                    heroBg.style.transform = `scale(${scale}) translateZ(0)`;
                 }
             }
             ticking = false;
@@ -80,6 +73,7 @@ window.addEventListener('scroll', () => {
         ticking = true;
     }
 }, { passive: true });
+
 /* ==========================================================
    CARRUSEL GENERAL DE PROPIEDADES
    ========================================================== */
@@ -112,7 +106,7 @@ function moveSlide(carouselId, direction) {
 }
 
 /* ==========================================================
-   CONTROL DE PESTAÑAS Y CARRUSEL HORIZONTAL INTERACTIVO (B2B)
+   CONTROL DE PESTAÑAS Y CARRUSEL B2B
    ========================================================== */
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".b2b-content-container");
@@ -182,7 +176,7 @@ function switchB2BTab(tabId, btnElement) {
 }
 
 /* ==========================================================
-   EFECTO DINÁMICO AL RITMO DEL SCROLL (FLUIDO TIPO APPLE)
+   EFECTO APPLE REVEAL
    ========================================================== */
 document.addEventListener("DOMContentLoaded", () => {
     const revealElements = document.querySelectorAll(".apple-reveal");
@@ -228,7 +222,7 @@ window.addEventListener("click", (event) => {
 });
 
 /* ----------------------------------------------------------
-   WIDGET FLOTANTE DE FAUNA SUR Y AUDIOS DE AVES
+   WIDGET FLOTANTE DE FAUNA SUR
    ---------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
     const faunaToggleBtn = document.getElementById("faunaToggleBtn");
@@ -271,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     birdAudioPlayer.src = audioPath;
                     birdAudioPlayer.play().catch(error => {
-                        console.warn("Reproducción de audio prevenida o bloqueada por políticas del navegador:", error);
+                        console.warn("Reproducción de audio prevenida:", error);
                         this.style.opacity = "1";
                     });
 
