@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
 let ticking = false;
 
 window.addEventListener('scroll', () => {
-    // En móviles no tocamos el transform por scroll para garantizar fluidez total
     if (window.innerWidth <= 900) return;
 
     if (!ticking) {
@@ -202,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================
-   MODAL ESTILO APPLE
+   MODAL ESTILO APPLE (FILOSOFÍA)
    ========================================================== */
 function openModal() {
     const modal = document.getElementById("infoModal");
@@ -275,5 +274,51 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
+    }
+});
+
+/* ==========================================================
+   MODAL DE PROPIEDADES (AMPLIAR, 5+ FOTOS, WHATSAPP Y CIERRE EXTERNO)
+   ========================================================== */
+let fotosModalActuales = [];
+let indiceFotoModal = 0;
+
+function abrirPropiedadModal(cardElement) {
+    // Captura dinámica de TODAS las fotos de la tarjeta (sea 3, 5 o más)
+    const imagenes = cardElement.querySelectorAll('.carousel img');
+    fotosModalActuales = Array.from(imagenes).map(img => img.src);
+    indiceFotoModal = 0;
+
+    if (fotosModalActuales.length > 0) {
+        document.getElementById('modalImg').src = fotosModalActuales[0];
+    }
+
+    document.getElementById('modalBadge').textContent = cardElement.querySelector('.card-badge')?.textContent || '';
+    document.getElementById('modalTitle').textContent = cardElement.querySelector('.card-title')?.textContent || '';
+    document.getElementById('modalSpecs').innerHTML = cardElement.querySelector('.card-specs-futuristic')?.innerHTML || '';
+    document.getElementById('modalPrice').textContent = cardElement.querySelector('.card-price')?.textContent || '';
+
+    const titulo = encodeURIComponent(cardElement.querySelector('.card-title')?.textContent || 'una propiedad');
+    const wspUrl = `https://wa.me/56948814357?text=${encodeURIComponent('Hola Grupo Mhor, me interesa solicitar más información sobre: ')}${titulo}`;
+    document.getElementById('modalWspBtn').href = wspUrl;
+
+    document.getElementById('propiedadModal').classList.add('active');
+}
+
+function cerrarPropiedadModal() {
+    document.getElementById('propiedadModal').classList.remove('active');
+}
+
+function cambiarFotoModal(direccion) {
+    if (fotosModalActuales.length === 0) return;
+    indiceFotoModal = (indiceFotoModal + direccion + fotosModalActuales.length) % fotosModalActuales.length;
+    document.getElementById('modalImg').src = fotosModalActuales[indiceFotoModal];
+}
+
+// Evento global para cerrar el modal de propiedades al hacer clic fuera de la tarjeta
+window.addEventListener("click", (event) => {
+    const modalPropiedad = document.getElementById("propiedadModal");
+    if (modalPropiedad && event.target === modalPropiedad) {
+        cerrarPropiedadModal();
     }
 });

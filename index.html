@@ -85,14 +85,14 @@
 
             <div class="propiedades-grid">
                 <!-- Propiedad 1 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car1">
                         <span class="card-badge">Terreno</span>
                         <img src="img/propiedad1/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad1/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad1/foto3.jpg" alt="Foto 3">
-                        <button class="prev" onclick="moveSlide('car1', -1)">❮</button>
-                        <button class="next" onclick="moveSlide('car1', 1)">❯</button>
+                        <button class="prev" onclick="event.stopPropagation(); moveSlide('car1', -1)">❮</button>
+                        <button class="next" onclick="event.stopPropagation(); moveSlide('car1', 1)">❯</button>
                     </div>
                     <div class="card-content glass-card-effect">
                         <h3 class="card-title">Parcelas rodeadas de bosque nativo a minutos de Pucón</h3>
@@ -117,14 +117,14 @@
                 </div>
 
                 <!-- Propiedad 2 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car2">
                         <span class="card-badge">Departamento</span>
                         <img src="img/propiedad2/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad2/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad2/foto3.jpg" alt="Foto 3">
-                        <button class="prev" onclick="moveSlide('car2', -1)">❮</button>
-                        <button class="next" onclick="moveSlide('car2', 1)">❯</button>
+                        <button class="prev" onclick="event.stopPropagation(); moveSlide('car2', -1)">❮</button>
+                        <button class="next" onclick="event.stopPropagation(); moveSlide('car2', 1)">❯</button>
                     </div>
                     <div class="card-content glass-card-effect">
                         <h3 class="card-title">Departamento en Condominio Loncotraro, Villarrica</h3>
@@ -149,14 +149,14 @@
                 </div>
 
                 <!-- Propiedad 3 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car3">
                         <span class="card-badge">Terreno</span>
                         <img src="img/propiedad3/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad3/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad3/foto3.jpg" alt="Foto 3">
-                        <button class="prev" onclick="moveSlide('car3', -1)">❮</button>
-                        <button class="next" onclick="moveSlide('car3', 1)">❯</button>
+                        <button class="prev" onclick="event.stopPropagation(); moveSlide('car3', -1)">❮</button>
+                        <button class="next" onclick="event.stopPropagation(); moveSlide('car3', 1)">❯</button>
                     </div>
                     <div class="card-content glass-card-effect">
                         <h3 class="card-title">Oportunidad de Inversión Comercial en Villarrica</h3>
@@ -181,14 +181,14 @@
                 </div>
 
                 <!-- Propiedad 4 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car4">
                         <span class="card-badge">Vivienda</span>
                         <img src="img/propiedad4/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad4/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad4/foto3.jpg" alt="Foto 3">
-                        <button class="prev" onclick="moveSlide('car4', -1)">❮</button>
-                        <button class="next" onclick="moveSlide('car4', 1)">❯</button>
+                        <button class="prev" onclick="event.stopPropagation(); moveSlide('car4', -1)">❮</button>
+                        <button class="next" onclick="event.stopPropagation(); moveSlide('car4', 1)">❯</button>
                     </div>
                     <div class="card-content glass-card-effect">
                         <h3 class="card-title">Amplia Casa Remodelada en Villarrica</h3>
@@ -213,14 +213,14 @@
                 </div>
 
                 <!-- Propiedad 5 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car5">
                         <span class="card-badge">Terreno</span>
                         <img src="img/propiedad5/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad5/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad5/foto3.jpg" alt="Foto 3">
-                        <button class="prev" onclick="moveSlide('car5', -1)">❮</button>
-                        <button class="next" onclick="moveSlide('car5', 1)">❯</button>
+                        <button class="prev" onclick="event.stopPropagation(); moveSlide('car5', -1)">❮</button>
+                        <button class="next" onclick="event.stopPropagation(); moveSlide('car5', 1)">❯</button>
                     </div>
                     <div class="card-content glass-card-effect">
                         <h3 class="card-title">Parcela Mirador de La Barda Caburgua</h3>
@@ -244,87 +244,88 @@
                     </div>
                 </div>
 
-                <!-- Propiedad 6 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper">
+<!-- Propiedad 6 -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car6">
-                        <span class="card-badge">Disponible</span>
+                        <span class="card-badge">Oportunidad</span>
                         <img src="img/propiedad6/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad6/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad6/foto3.jpg" alt="Foto 3">
-                        <button class="prev" onclick="moveSlide('car6', -1)">❮</button>
-                        <button class="next" onclick="moveSlide('car6', 1)">❯</button>
+                        <img src="img/propiedad6/foto4.jpg" alt="Foto 4">
+                        <img src="img/propiedad6/foto5.jpg" alt="Foto 5">
+                        <img src="img/propiedad6/foto6.jpg" alt="Foto 6">
+                        <img src="img/propiedad6/foto7.jpg" alt="Foto 7">
+                        <img src="img/propiedad6/foto8.jpg" alt="Foto 8">
+                        <button class="prev" onclick="event.stopPropagation(); moveSlide('car6', -1)">❮</button>
+                        <button class="next" onclick="event.stopPropagation(); moveSlide('car6', 1)">❯</button>
                     </div>
                     <div class="card-content glass-card-effect">
-                        <h3 class="card-title">Propiedad Exclusiva</h3>
+                        <h3 class="card-title">Proyecto turístico Aldea de Rinconada</h3>
                         
                         <div class="card-specs-futuristic">
                             <div class="spec-item">
                                 <svg viewBox="0 0 24 24"><path d="M21 3H3v18h18V3zM3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
-                                <span>Consultar m²</span>
+                                <span>5.425 m²</span>
                             </div>
                             <div class="spec-item">
-                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                                <span>Rol Propio</span>
+                              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                <span>1 casa principal y 3 cabañas</span>
+                            </div>
+                            <div class="spec-item">
+                               <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                <span>Luz eléctrica y agua de vertiente</span>
                             </div>
                         </div>
-                        <div class="card-price">Consultar UF</div>
+                        <div class="card-price">$285.000.000 CLP</div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- BANNER PROTOTIPO TOUR VIRTUAL 360 (LIMPIO Y CON PULSO VERDE) -->
-            <div class="tour-360-banner apple-reveal" style="margin-top: 50px; background: rgba(22, 22, 23, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-radius: 24px; padding: 30px; border: none; position: relative; overflow: hidden;">
-                <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
+        
+        <!-- BANNER PROTOTIPO TOUR VIRTUAL 360 -->
+        <div class="tour-360-banner apple-reveal" style="margin-top: 50px; background: rgba(22, 22, 23, 0.7); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-radius: 24px; padding: 30px; border: none; position: relative; overflow: hidden;">
+            <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
+                <div style="flex: 1 1 450px; min-width: 300px; height: 320px; border-radius: 18px; overflow: hidden; position: relative; background: url('img/portada.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 50px rgba(0,0,0,0.8);">
+                    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(3px);"></div>
+                    <span class="card-badge" style="position: absolute; top: 15px; left: 15px; z-index: 10; background: rgba(0, 0, 0, 0.65); color: #fff; font-weight: 500; border: none;">GRUPO MHOR | 360°</span>
+                    <div style="position: relative; z-index: 5; text-align: center; padding: 20px;">
+                        <div style="width: 65px; height: 65px; margin: 0 auto 15px auto; background: rgba(48, 209, 88, 0.2); border: 2px solid #30d158; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulseGlow 2s infinite;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="#30d158"/></svg>
+                        </div>
+                        <h4 style="color: #fff; font-size: 1.05rem; font-weight: 600; margin-bottom: 4px; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Simulador Inmersivo</h4>
+                    </div>
+                </div>
+
+                <div style="flex: 1 1 350px;">
+                    <span class="linea-tag tag-verde" style="margin-bottom: 8px;">PRÓXIMAMENTE</span>
+                    <h3 style="font-size: 1.6rem; font-weight: 600; color: #ffffff; margin-bottom: 12px; line-height: 1.3;">Recorridos Virtuales 360°</h3>
+                    <p style="font-size: 0.95rem; color: #e5e5ea; line-height: 1.5; margin-bottom: 20px;">Estamos integrando tecnología propia para ofrecer experiencias inmersivas avanzadas, optimizando los tiempos de evaluación comercial y reduciendo la huella de carbono en la región.</p>
                     
-                    <!-- Lado Izquierdo: Simulador Gráfico Propio 360 con Pulso Verde -->
-                    <div style="flex: 1 1 450px; min-width: 300px; height: 320px; border-radius: 18px; overflow: hidden; position: relative; background: url('img/portada.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 50px rgba(0,0,0,0.8);">
-                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(3px);"></div>
-                        
-                        <span class="card-badge" style="position: absolute; top: 15px; left: 15px; z-index: 10; background: rgba(0, 0, 0, 0.65); color: #fff; font-weight: 500; border: none;">GRUPO MHOR | 360°</span>
-                        
-                        <!-- Elemento interactivo con animación de pulso verde -->
-                        <div style="position: relative; z-index: 5; text-align: center; padding: 20px;">
-                            <div style="width: 65px; height: 65px; margin: 0 auto 15px auto; background: rgba(48, 209, 88, 0.2); border: 2px solid #30d158; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulseGlow 2s infinite;">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#30d158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="#30d158"/></svg>
-                            </div>
-                            <h4 style="color: #fff; font-size: 1.05rem; font-weight: 600; margin-bottom: 4px; text-shadow: 0 2px 8px rgba(0,0,0,0.8);">Simulador Inmersivo</h4>
+                    <div class="card-specs-futuristic" style="margin-bottom: 20px;">
+                        <div class="spec-item">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+                            <span>Tecnología nativa</span>
+                        </div>
+                        <div class="spec-item">
+                            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            <span>Alto impacto comercial</span>
                         </div>
                     </div>
 
-                    <!-- Lado Derecho: Redacción optimizada -->
-                    <div style="flex: 1 1 350px;">
-                        <span class="linea-tag tag-verde" style="margin-bottom: 8px;">PRÓXIMAMENTE</span>
-                        <h3 style="font-size: 1.6rem; font-weight: 600; color: #ffffff; margin-bottom: 12px; line-height: 1.3;">Recorridos Virtuales 360°</h3>
-                        <p style="font-size: 0.95rem; color: #e5e5ea; line-height: 1.5; margin-bottom: 20px;">Estamos integrando tecnología propia para ofrecer experiencias inmersivas avanzadas, optimizando los tiempos de evaluación comercial y reduciendo la huella de carbono en la región.</p>
-                        
-                        <div class="card-specs-futuristic" style="margin-bottom: 20px;">
-                            <div class="spec-item">
-                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
-                                <span>Tecnología nativa</span>
-                            </div>
-                            <div class="spec-item">
-                                <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                                <span>Alto impacto comercial</span>
-                            </div>
-                        </div>
-
-                        <!-- Botón estilo nativo -->
-                        <div class="btn-sec" style="cursor: default; pointer-events: none; display: inline-flex;">
-                            Prototipo en postulación de equipamiento
-                        </div>
+                    <div class="btn-sec" style="cursor: default; pointer-events: none; display: inline-flex;">
+                        Prototipo en postulación de equipamiento
                     </div>
-
                 </div>
             </div>
+        </div>
 
-            <!-- Animación de pulido para el icono central -->
-            <style>
-                @keyframes pulseGlow {
-                    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.4); }
-                    70% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(48, 209, 88, 0); }
-                    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(48, 209, 88, 0); }
-                }
-            </style>
+        <style>
+            @keyframes pulseGlow {
+                0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.4); }
+                70% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(48, 209, 88, 0); }
+                100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(48, 209, 88, 0); }
+            }
+        </style>
     </section>
 
     <!-- SECCIÓN AGENCIA B2B -->
@@ -398,7 +399,7 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO (CON EFECTO APPLE REVEAL) -->
+    <!-- SECCIÓN CONTACTO -->
     <section id="contacto" class="section-container contact-section apple-reveal" style="background-image: url('img/sobre-nosotros.jpg');">
         <div class="container-inner relative-z">
             <h2 class="section-title">Iniciemos una conversación estratégica.</h2>
@@ -525,7 +526,31 @@
         </svg>
     </a>
 
-<link rel="stylesheet" href="style.css?v=3.6">
-<script src="script.js?v=3.6">"></script>
+    <!-- CARGA DE JS -->
+    <script src="script.js?v=3.6"></script>
+
+    <!-- MODAL DETALLE DE PROPIEDAD (AMPLIADO Y CON CIERRE EXTERNO) -->
+    <div id="propiedadModal" class="apple-modal-overlay">
+        <div class="apple-modal-card modal-propiedad-ampliada">
+            <button class="apple-modal-close" onclick="cerrarPropiedadModal()">&times;</button>
+            
+            <div class="modal-carousel-wrapper">
+                <img id="modalImg" src="" alt="Vista ampliada">
+                <button class="prev" onclick="cambiarFotoModal(-1)">❮</button>
+                <button class="next" onclick="cambiarFotoModal(1)">❯</button>
+            </div>
+
+            <div class="modal-prop-info">
+                <span id="modalBadge" class="card-badge"></span>
+                <h3 id="modalTitle" class="card-title"></h3>
+                <div id="modalSpecs" class="card-specs-futuristic"></div>
+                <div id="modalPrice" class="card-price"></div>
+                
+                <a id="modalWspBtn" href="#" target="_blank" class="btn-main btn-wsp-modal">
+                    Solicitar más información en WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
