@@ -278,42 +278,59 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================
-   MODAL DE PROPIEDADES (ESTILO ENGEL & VÖLKERS + ENLACE DE PROPIEDAD)
+   MODAL DE PROPIEDADES (ESTILO ENGEL & VÖLKERS + VIDEOS YOUTUBE)
    ========================================================== */
 let fotosModalActuales = [];
 let indiceFotoModal = 0;
 let idPropiedadActual = '';
 
-// Base de datos segura de descripciones para garantizar visualización en producción
-const descripcionesPropiedades = {
-    'propiedad-1': `
-        <p>Parcelas con servicios instalados de luz y agua desde los 5.000 a 6.000 m², camino privado en un sector exclusivo a solo 15 minutos de Pucón.</p>
-        <p>Ven a conocer estas increíbles parcelas con toda la documentación al día, los terrenos son planos y algunos cuentan con una hermosa vista al volcán Villarrica.</p>
-    `,
-    'propiedad-2': `
-        <p>Te presentamos este departamento exclusivo en Condominio Loncotraro. Ubicado en un cuarto piso, consta de 48,30 m², dos dormitorios, un baño, cocina americana, living comedor, terraza, lavandería y estacionamiento privado.</p>
-        <p>Con seguridad 24/7, áreas verdes, sala de eventos, juegos infantiles y piscina.</p>
-    `,
-    'propiedad-3': `
-        <p>Ofrecemos esta propiedad en el corazón de Villarrica, en Avenida Colo Colo. Un terreno urbano de 325 m² aproximados, oportunidad única de inversión en un entorno con una plusvalía proyectada al más alto nivel.</p>
-        <p>Se reciben ofertas serias. Posee Rol propio y documentación al día.</p>
-    `,
-    'propiedad-4': `
-        <p>Presentamos este hogar que su dueña se ha preocupado de entregar remodelado, con patio amplio y excelente conectividad para vivir en familia o invertir, ubicado en C. Lago Panguipulli (Segunda faja), un lugar consolidado de Villarrica.</p>
-        <p>Sector tranquilo y seguro, con áreas verdes y cercano a colegios, supermercados, CESFAM y comercios locales.</p>
-    `,
-    'propiedad-5': `
-        <p>Hermosa parcela ubicada en cerro La Barda, rodeada de naturaleza, árboles nativos y hermosas vistas a cerros y al volcán Villarrica. Cuenta con agua y luz a conectar (200 m).</p>
-        <p>La parcela es la número 31, cuenta con toda su documentación al día. Y está ubicada a solo 14 km de Caburgua.</p>
-    `,
-    'propiedad-6': `
-        <p>¡Vive o invierte en un entorno privilegiado rodeado de bosque nativo! Ubicado a solo 30 km de Pucón (Ruta Pucón-Curarrehue, sector Catripulli). Una oportunidad única con excelente conectividad, naturaleza y comodidades listas para habitar o desarrollar un proyecto turístico.</p>
-        <p><strong>Incluye:</strong><br>
-        - Casa Principal (147 m² + 60 m² terraza + 40 m² estacionamiento, 6 dormitorios y 2 baños).<br>
-        - Cabaña 2 (50 m², 2 dormitorios, 1 baño e incluye tinaja).<br>
-        - Cabaña 3 (50 m², 2 dormitorios y 1 baño).<br>
-        - Cabaña 4 (26 m², 1 dormitorio y 1 baño).</p>
-    `
+const datosPropiedades = {
+    'propiedad-1': {
+        youtubeId: 'hsYrNm_OA2w', // Parcelas bosque nativo Pucón
+        desc: `
+            <p>Parcelas con servicios instalados de luz y agua desde los 5.000 a 6.000 m², camino privado en un sector exclusivo a solo 15 minutos de Pucón.</p>
+            <p>Ven a conocer estas increíbles parcelas con toda la documentación al día, los terrenos son planos y algunos cuentan con una hermosa vista al volcán Villarrica.</p>
+        `
+    },
+    'propiedad-2': {
+        youtubeId: '2Th5bxFmBoE', // Departamento Condominio Loncotraro
+        desc: `
+            <p>Te presentamos este departamento exclusivo en Condominio Loncotraro. Ubicado en un cuarto piso, consta de 48,30 m², dos dormitorios, un baño, cocina americana, living comedor, terraza, lavandería y estacionamiento privado.</p>
+            <p>Con seguridad 24/7, áreas verdes, sala de eventos, juegos infantiles y piscina.</p>
+        `
+    },
+    'propiedad-3': {
+        youtubeId: '',
+        desc: `
+            <p>Ofrecemos esta propiedad en el corazón de Villarrica, en Avenida Colo Colo. Un terreno urbano de 325 m² aproximados, oportunidad única de inversión en un entorno con una plusvalía proyectada al más alto nivel.</p>
+            <p>Se reciben ofertas serias. Posee Rol propio y documentación al día.</p>
+        `
+    },
+    'propiedad-4': {
+        youtubeId: '',
+        desc: `
+            <p>Presentamos este hogar que su dueña se ha preocupado de entregar remodelado, con patio amplio y excelente conectividad para vivir en familia o invertir, ubicado en C. Lago Panguipulli (Segunda faja), un lugar consolidado de Villarrica.</p>
+            <p>Sector tranquilo y seguro, con áreas verdes y cercano a colegios, supermercados, CESFAM y comercios locales.</p>
+        `
+    },
+    'propiedad-5': {
+        youtubeId: '',
+        desc: `
+            <p>Hermosa parcela ubicada en cerro La Barda, rodeada de naturaleza, árboles nativos y hermosas vistas a cerros y al volcán Villarrica. Cuenta con agua y luz a conectar (200 m).</p>
+            <p>La parcela es la número 31, cuenta con toda su documentación al día. Y está ubicada a solo 14 km de Caburgua.</p>
+        `
+    },
+    'propiedad-6': {
+        youtubeId: 'IqDJt039_vM', // Proyecto turístico Aldea de Rinconada
+        desc: `
+            <p>¡Vive o invierte en un entorno privilegiado rodeado de bosque nativo! Ubicado a solo 30 km de Pucón (Ruta Pucón-Curarrehue, sector Catripulli). Una oportunidad única con excelente conectividad, naturaleza y comodidades listas para habitar o desarrollar un proyecto turístico.</p>
+            <p><strong>Incluye:</strong><br>
+            - Casa Principal (147 m² + 60 m² terraza + 40 m² estacionamiento, 6 dormitorios y 2 baños).<br>
+            - Cabaña 2 (50 m², 2 dormitorios, 1 baño e incluye tinaja).<br>
+            - Cabaña 3 (50 m², 2 dormitorios y 1 baño).<br>
+            - Cabaña 4 (26 m², 1 dormitorio y 1 baño).</p>
+        `
+    }
 };
 
 function abrirPropiedadModal(cardElement, propId = '') {
@@ -331,13 +348,27 @@ function abrirPropiedadModal(cardElement, propId = '') {
     document.getElementById('modalSpecs').innerHTML = cardElement.querySelector('.card-specs-futuristic')?.innerHTML || '';
     document.getElementById('modalPrice').textContent = cardElement.querySelector('.card-price')?.textContent || '';
 
-    // Carga de descripción garantizada por ID
+    const propData = datosPropiedades[propId];
+
+    // Carga de descripción
     const descContainer = document.getElementById('modalDescription');
     if (descContainer) {
-        descContainer.innerHTML = descripcionesPropiedades[propId] || '<p style="color: #86868b; font-size: 0.9rem;">Propiedad exclusiva de Grupo Mhor. Solicita más detalles de distribución y documentación directamente con nuestro equipo.</p>';
+        descContainer.innerHTML = propData ? propData.desc : '<p style="color: #86868b; font-size: 0.9rem;">Propiedad exclusiva de Grupo Mhor.</p>';
     }
 
-    // Actualizar URL hash para compartir enlace de la propiedad
+    // Manejo de video YouTube con parámetros de origen seguros (Evita Error 153)
+    const videoSection = document.getElementById('modalVideoSection');
+    const iframe = document.getElementById('modalYoutubeIframe');
+
+    if (propData && propData.youtubeId) {
+        const originUrl = encodeURIComponent(window.location.origin);
+        iframe.src = `https://www.youtube-nocookie.com/embed/${propData.youtubeId}?enablejsapi=1&origin=${originUrl}&rel=0&modestbranding=1`;
+        videoSection.style.display = 'block';
+    } else {
+        iframe.src = '';
+        videoSection.style.display = 'none';
+    }
+
     if (propId) {
         history.pushState(null, null, `#${propId}`);
     }
@@ -352,7 +383,11 @@ function abrirPropiedadModal(cardElement, propId = '') {
 
 function cerrarPropiedadModal() {
     document.getElementById('propiedadModal').classList.remove('active');
-    // Limpiar el hash de la URL sin recargar la página
+
+    // Pausar y limpiar video al cerrar
+    const iframe = document.getElementById('modalYoutubeIframe');
+    if (iframe) iframe.src = '';
+
     if (window.location.hash) {
         history.pushState("", document.title, window.location.pathname + window.location.search);
     }

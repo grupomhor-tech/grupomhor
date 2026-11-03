@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo Mhor | Inversión y Gestión Inmobiliaria</title>
     <link rel="icon" type="image/png" href="img/url.png">
-    <link rel="stylesheet" href="style.css?v=3.6">
+    <link rel="stylesheet" href="style.css?v=4.0">
 
     <meta name="description" content="Inmobiliaria en Pucón y el sur de Chile. Grupo Mhor SpA ofrece inversión, corretaje digital, material audiovisual y marketing para proyectos y desarrollo de activos inmobiliarios de alto nivel.">
     <meta name="keywords" content="Inmobiliaria en Pucón, Grupo Mhor SpA, corretaje en Pucón, propiedades Villarrica, inversión inmobiliaria sur de Chile, contenido audiovisual, marketing inmobiliario B2B">
@@ -113,12 +113,6 @@
                         </div>
 
                         <div class="card-price">Desde $75.000.000 CLP</div>
-
-                        <!-- Info Extendida Estilo Engel & Völkers (Leída por el Modal) -->
-                        <div class="prop-extended-desc" style="display:none;">
-                            <p>Parcelas con servicios instalados de luz y agua desde los 5.000 a 6.000 m², camino privado en un sector exclusivo a solo 15 minutos de Pucón.</p>
-                            <p>Ven a conocer estas increíbles parcelas con toda la documentación al día, los terrenos son planos y algunos cuentan con una hermosa vista al volcán Villarrica.</p>
-                        </div>
                     </div>
                 </div>
 
@@ -151,11 +145,6 @@
                         </div>
 
                         <div class="card-price">$90.000.000 CLP</div>
-
-                        <div class="prop-extended-desc" style="display:none;">
-                            <p>Te presentamos este departamento exclusivo en Condominio Loncotraro. Ubicado en un cuarto piso, consta de 48,30 m², dos dormitorios, un baño, cocina americana, living comedor, terraza, lavandería y estacionamiento privado.</p>
-                            <p>Con seguridad 24/7, áreas verdes, sala de eventos, juegos infantiles y piscina.</p>
-                        </div>
                     </div>
                 </div>
 
@@ -188,11 +177,6 @@
                         </div>
 
                         <div class="card-price">$150.000.000 CLP</div>
-
-                        <div class="prop-extended-desc" style="display:none;">
-                            <p>Ofrecemos esta propiedad en el corazón de Villarrica, en Avenida Colo Colo. Un terreno urbano de 325 m² aproximados, oportunidad única de inversión en un entorno con una plusvalía proyectada al más alto nivel.</p>
-                            <p>Se reciben ofertas serias. Posee Rol propio y documentación al día.</p>
-                        </div>
                     </div>
                 </div>
 
@@ -225,11 +209,6 @@
                         </div>
 
                         <div class="card-price">$92.000.000 CLP</div>
-
-                        <div class="prop-extended-desc" style="display:none;">
-                            <p>Presentamos este hogar que su dueña se han preocupado de entregar remodelado, con patio amplio y excelente conectividad para vivir en familia o invertir, ubicado en C. Lago Panguipulli (Segunda faja), un lugar consolidado de Villarrica.</p>
-                            <p>Sector tranquilo y seguro, con áreas verdes y cercano a colegios, supermercados, CESFAM y comercios locales.</p>
-                        </div>
                     </div>
                 </div>
 
@@ -262,11 +241,6 @@
                         </div>
 
                         <div class="card-price">$33.000.000 CLP</div>
-
-                        <div class="prop-extended-desc" style="display:none;">
-                            <p>Hermosa parcela ubicada en cerro La Barda, rodeada de naturaleza, árboles nativos y hermosas vistas a cerros y al volcán Villarrica. Cuenta con agua y luz a conectar (200 m).</p>
-                            <p>La parcela es la número 31, cuenta con toda su documentación al día. Y está ubicada a solo 14 km de Caburgua.</p>
-                        </div>
                     </div>
                 </div>
 
@@ -303,15 +277,6 @@
                             </div>
                         </div>
                         <div class="card-price">$285.000.000 CLP</div>
-
-                        <div class="prop-extended-desc" style="display:none;">
-                            <p>¡Vive o invierte en un entorno privilegiado rodeado de bosque nativo! Ubicado a solo 30 km de Pucón (Ruta Pucón-Curarrehue, sector Catripulli). Una oportunidad única con excelente conectividad, naturaleza y comodidades listas para habitar o desarrollar un proyecto turístico.</p>
-                            <p><strong>Incluye:</strong><br>
-                            - Casa Principal (147 m² + 60 m² terraza + 40 m² estacionamiento, 6 dormitorios y 2 baños).<br>
-                            - Cabaña 2 (50 m², 2 dormitorios, 1 baño e incluye tinaja).<br>
-                            - Cabaña 3 (50 m², 2 dormitorios y 1 baño).<br>
-                            - Cabaña 4 (26 m², 1 dormitorio y 1 baño).</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -561,10 +526,10 @@
         </svg>
     </a>
 
-    <!-- CARGA DE JS -->
-    <script src="script.js?v=3.9"></script>
+    <!-- CARGA DE JS CON VERSIÓN 4.0 -->
+    <script src="script.js?v=4.0"></script>
 
-    <!-- MODAL DE PROPIEDADES (ESTILO ENGEL & VÖLKERS REORGANIZADO) -->
+    <!-- MODAL DE PROPIEDADES (ESTILO ENGEL & VÖLKERS + SECCIÓN DE VIDEO) -->
     <div id="propiedadModal" class="apple-modal-overlay">
         <div class="apple-modal-card modal-propiedad-ampliada">
             
@@ -572,7 +537,7 @@
             <div class="modal-header-actions" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                 <span id="modalBadge" class="card-badge" style="position: relative; top: auto; left: auto;"></span>
                 
-                <button class="modal-share-btn" onclick="copiarEnlacePropiedad()" title="Copiar enlace único" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 7px 16px; border-radius: 980px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.85rem; transition: background 0.2s;">
+                <button class="modal-share-btn" onclick="copiarEnlacePropiedad()" title="Copiar enlace" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 7px 16px; border-radius: 980px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.85rem; transition: background 0.2s;">
                     <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
                     Compartir Enlace
                 </button>
@@ -595,7 +560,15 @@
                 <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 25px 0;"></div>
                 
                 <h4 class="modal-subtitle" style="font-size: 1rem; color: #fff; margin-bottom: 12px; font-weight: 500;">Descripción del Inmueble</h4>
-                <div id="modalDescription" class="modal-desc-text" style="color: #86868b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px;"></div>
+                <div id="modalDescription" class="modal-desc-text" style="color: #86868b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px;"></div>
+
+                <!-- SECCIÓN DE VIDEO TOUR DE YOUTUBE -->
+                <div id="modalVideoSection" style="display: none; margin-bottom: 25px;">
+                    <h4 class="modal-subtitle" style="font-size: 1rem; color: #fff; margin-bottom: 12px; font-weight: 500;">Video Tour</h4>
+                    <div class="video-container-responsive" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; background: #000;">
+                        <iframe id="modalYoutubeIframe" src="" style="position: absolute; top:0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
 
                 <a id="modalWspBtn" href="#" target="_blank" class="btn-main btn-wsp-modal">
                     Solicitar más información en WhatsApp
