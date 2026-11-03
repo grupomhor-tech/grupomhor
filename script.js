@@ -323,7 +323,7 @@ const datosPropiedades = {
     'propiedad-6': {
         youtubeId: 'IqDJt039_vM', // Proyecto turístico Aldea de Rinconada
         desc: `
-            <p>¡Vive o invierte en un entorno privilegiado rodeado de bosque nativo! Ubicado a solo 30 km de Pucón (Ruta Pucón-Curarrehue, sector Catripulli). Una oportunidad única con excelente conectividad, naturaleza y comodidades listas para habitar o desarrollar un proyecto turístico.</p>
+            <p>¡Vive o invierte en un entorno privileged rodeado de bosque nativo! Ubicado a solo 30 km de Pucón (Ruta Pucón-Curarrehue, sector Catripulli). Una oportunidad única con excelente conectividad, naturaleza y comodidades listas para habitar o desarrollar un proyecto turístico.</p>
             <p><strong>Incluye:</strong><br>
             - Casa Principal (147 m² + 60 m² terraza + 40 m² estacionamiento, 6 dormitorios y 2 baños).<br>
             - Cabaña 2 (50 m², 2 dormitorios, 1 baño e incluye tinaja).<br>
@@ -356,13 +356,13 @@ function abrirPropiedadModal(cardElement, propId = '') {
         descContainer.innerHTML = propData ? propData.desc : '<p style="color: #86868b; font-size: 0.9rem;">Propiedad exclusiva de Grupo Mhor.</p>';
     }
 
-    // Manejo de video YouTube con parámetros de origen seguros (Evita Error 153)
+    // Manejo de video YouTube optimizado a 1080p por defecto para todos los videos
     const videoSection = document.getElementById('modalVideoSection');
     const iframe = document.getElementById('modalYoutubeIframe');
 
     if (propData && propData.youtubeId) {
         const originUrl = encodeURIComponent(window.location.origin);
-        iframe.src = `https://www.youtube-nocookie.com/embed/${propData.youtubeId}?enablejsapi=1&origin=${originUrl}&rel=0&modestbranding=1`;
+        iframe.src = `https://www.youtube-nocookie.com/embed/${propData.youtubeId}?enablejsapi=1&origin=${originUrl}&rel=0&modestbranding=1&vq=hd1080`;
         videoSection.style.display = 'block';
     } else {
         iframe.src = '';
