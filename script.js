@@ -282,11 +282,45 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================== */
 let fotosModalActuales = [];
 let indiceFotoModal = 0;
+let idPropiedadActual = '';
+
+// Base de datos segura de descripciones para garantizar visualización en producción
+const descripcionesPropiedades = {
+    'propiedad-1': `
+        <p>Parcelas con servicios instalados de luz y agua desde los 5.000 a 6.000 m², camino privado en un sector exclusivo a solo 15 minutos de Pucón.</p>
+        <p>Ven a conocer estas increíbles parcelas con toda la documentación al día, los terrenos son planos y algunos cuentan con una hermosa vista al volcán Villarrica.</p>
+    `,
+    'propiedad-2': `
+        <p>Te presentamos este departamento exclusivo en Condominio Loncotraro. Ubicado en un cuarto piso, consta de 48,30 m², dos dormitorios, un baño, cocina americana, living comedor, terraza, lavandería y estacionamiento privado.</p>
+        <p>Con seguridad 24/7, áreas verdes, sala de eventos, juegos infantiles y piscina.</p>
+    `,
+    'propiedad-3': `
+        <p>Ofrecemos esta propiedad en el corazón de Villarrica, en Avenida Colo Colo. Un terreno urbano de 325 m² aproximados, oportunidad única de inversión en un entorno con una plusvalía proyectada al más alto nivel.</p>
+        <p>Se reciben ofertas serias. Posee Rol propio y documentación al día.</p>
+    `,
+    'propiedad-4': `
+        <p>Presentamos este hogar que su dueña se ha preocupado de entregar remodelado, con patio amplio y excelente conectividad para vivir en familia o invertir, ubicado en C. Lago Panguipulli (Segunda faja), un lugar consolidado de Villarrica.</p>
+        <p>Sector tranquilo y seguro, con áreas verdes y cercano a colegios, supermercados, CESFAM y comercios locales.</p>
+    `,
+    'propiedad-5': `
+        <p>Hermosa parcela ubicada en cerro La Barda, rodeada de naturaleza, árboles nativos y hermosas vistas a cerros y al volcán Villarrica. Cuenta con agua y luz a conectar (200 m).</p>
+        <p>La parcela es la número 31, cuenta con toda su documentación al día. Y está ubicada a solo 14 km de Caburgua.</p>
+    `,
+    'propiedad-6': `
+        <p>¡Vive o invierte en un entorno privilegiado rodeado de bosque nativo! Ubicado a solo 30 km de Pucón (Ruta Pucón-Curarrehue, sector Catripulli). Una oportunidad única con excelente conectividad, naturaleza y comodidades listas para habitar o desarrollar un proyecto turístico.</p>
+        <p><strong>Incluye:</strong><br>
+        - Casa Principal (147 m² + 60 m² terraza + 40 m² estacionamiento, 6 dormitorios y 2 baños).<br>
+        - Cabaña 2 (50 m², 2 dormitorios, 1 baño e incluye tinaja).<br>
+        - Cabaña 3 (50 m², 2 dormitorios y 1 baño).<br>
+        - Cabaña 4 (26 m², 1 dormitorio y 1 baño).</p>
+    `
+};
 
 function abrirPropiedadModal(cardElement, propId = '') {
     const imagenes = cardElement.querySelectorAll('.carousel img');
     fotosModalActuales = Array.from(imagenes).map(img => img.src);
     indiceFotoModal = 0;
+    idPropiedadActual = propId;
 
     if (fotosModalActuales.length > 0) {
         document.getElementById('modalImg').src = fotosModalActuales[0];
@@ -297,11 +331,10 @@ function abrirPropiedadModal(cardElement, propId = '') {
     document.getElementById('modalSpecs').innerHTML = cardElement.querySelector('.card-specs-futuristic')?.innerHTML || '';
     document.getElementById('modalPrice').textContent = cardElement.querySelector('.card-price')?.textContent || '';
 
-    // Carga de descripción extendida limpia
-    const descElement = cardElement.querySelector('.prop-extended-desc');
+    // Carga de descripción garantizada por ID
     const descContainer = document.getElementById('modalDescription');
     if (descContainer) {
-        descContainer.innerHTML = descElement ? descElement.innerHTML : '<p style="color: #86868b; font-size: 0.9rem;">Propiedad exclusiva de Grupo Mhor. Solicita más detalles de distribución y documentación directamente con nuestro equipo.</p>';
+        descContainer.innerHTML = descripcionesPropiedades[propId] || '<p style="color: #86868b; font-size: 0.9rem;">Propiedad exclusiva de Grupo Mhor. Solicita más detalles de distribución y documentación directamente con nuestro equipo.</p>';
     }
 
     // Actualizar URL hash para compartir enlace único
@@ -310,8 +343,8 @@ function abrirPropiedadModal(cardElement, propId = '') {
     }
 
     const titulo = encodeURIComponent(cardElement.querySelector('.card-title')?.textContent || 'una propiedad');
-    const currentUrl = window.location.href;
-    const wspUrl = `https://wa.me/56948814357?text=${encodeURIComponent('Hola Grupo Mhor, me interesa solicitar más información y detalles sobre la propiedad: ')}${titulo} (${currentUrl})`;
+    const urlCompleta = `${window.location.origin}${window.location.pathname}#${propId}`;
+    const wspUrl = `https://wa.me/56948814357?text=${encodeURIComponent('Hola Grupo Mhor, me interesa solicitar más información y detalles sobre la propiedad: ')}${titulo} (${urlCompleta})`;
     document.getElementById('modalWspBtn').href = wspUrl;
 
     document.getElementById('propiedadModal').classList.add('active');
@@ -332,9 +365,12 @@ function cambiarFotoModal(direccion) {
 }
 
 function copiarEnlacePropiedad() {
-    const urlActual = window.location.href;
-    navigator.clipboard.writeText(urlActual).then(() => {
-        alert("¡Enlace de la propiedad copiado al portapapeles! Ya puedes compartirlo en WhatsApp.");
+    const urlCompleta = idPropiedadActual 
+        ? `${window.location.origin}${window.location.pathname}#${idPropiedadActual}` 
+        : window.location.href;
+
+    navigator.clipboard.writeText(urlCompleta).then(() => {
+        alert("¡Enlace único de la propiedad copiado al portapapeles!");
     }).catch(err => {
         console.error("Error al copiar enlace: ", err);
     });
