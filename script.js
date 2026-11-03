@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================
-   MODAL DE PROPIEDADES (ESTILO ENGEL & VÖLKERS + ENLACE ÚNICO)
+   MODAL DE PROPIEDADES (ESTILO ENGEL & VÖLKERS + ENLACE DE PROPIEDAD)
    ========================================================== */
 let fotosModalActuales = [];
 let indiceFotoModal = 0;
@@ -337,7 +337,7 @@ function abrirPropiedadModal(cardElement, propId = '') {
         descContainer.innerHTML = descripcionesPropiedades[propId] || '<p style="color: #86868b; font-size: 0.9rem;">Propiedad exclusiva de Grupo Mhor. Solicita más detalles de distribución y documentación directamente con nuestro equipo.</p>';
     }
 
-    // Actualizar URL hash para compartir enlace único
+    // Actualizar URL hash para compartir enlace de la propiedad
     if (propId) {
         history.pushState(null, null, `#${propId}`);
     }
@@ -370,7 +370,7 @@ function copiarEnlacePropiedad() {
         : window.location.href;
 
     navigator.clipboard.writeText(urlCompleta).then(() => {
-        alert("¡Enlace único de la propiedad copiado al portapapeles!");
+        alert("¡Enlace de la propiedad copiado al portapapeles!");
     }).catch(err => {
         console.error("Error al copiar enlace: ", err);
     });
