@@ -1,3 +1,7 @@
+/* ==========================================================
+   GRUPO MHOR - HOJA DE ESTILOS PRINCIPAL V4.1
+   ========================================================== */
+
 * { 
     margin: 0; 
     padding: 0; 
@@ -1413,8 +1417,9 @@ html {
     border-radius: 28px;
     max-width: 1050px;
     width: 95%;
-    max-height: 92vh;
-    overflow-y: auto;
+    max-height: 85vh; /* Delimitado perfectamente para evitar expansión infinita */
+    overflow-y: auto;  /* Scroll interno fluido */
+    -webkit-overflow-scrolling: touch;
     padding: 35px 40px;
     position: relative;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
@@ -1467,11 +1472,12 @@ html {
 
 @media (max-width: 768px) {
     .modal-carousel-wrapper {
-        height: 280px;
+        height: 250px;
     }
     .modal-propiedad-ampliada {
-        padding: 20px;
-        max-height: 95vh;
+        padding: 16px;
+        max-height: 88vh; /* Altura ideal en celulares para que respire arriba y abajo */
+        width: 92% !important;
     }
     .modal-propiedad-ampliada .apple-modal-close {
         top: 15px;
