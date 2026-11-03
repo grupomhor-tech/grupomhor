@@ -84,8 +84,8 @@
             </div>
 
             <div class="propiedades-grid">
-                <!-- Propiedad 1 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
+                <!-- PROPIEDAD 1: Parcelas rodeadas de bosque nativo -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" id="propiedad-1" onclick="abrirPropiedadModal(this, 'propiedad-1')" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car1">
                         <span class="card-badge">Terreno</span>
                         <img src="img/propiedad1/foto1.jpg" class="active" alt="Foto 1">
@@ -113,13 +113,19 @@
                         </div>
 
                         <div class="card-price">Desde $75.000.000 CLP</div>
+
+                        <!-- Info Extendida Estilo Engel & Völkers (Leída por el Modal) -->
+                        <div class="prop-extended-desc" style="display:none;">
+                            <p>Parcelas con servicios instalados de luz y agua desde los 5.000 a 6.000 m², camino privado en un sector exclusivo a solo 15 minutos de Pucón.</p>
+                            <p>Ven a conocer estas increíbles parcelas con toda la documentación al día, los terrenos son planos y algunos cuentan con una hermosa vista al volcán Villarrica.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Propiedad 2 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
+                <!-- PROPIEDAD 2: Departamento en Condominio Loncotraro -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" id="propiedad-2" onclick="abrirPropiedadModal(this, 'propiedad-2')" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car2">
-                        <span class="card-badge">Departamento</span>
+                        <span class="card-badge">Disponible</span>
                         <img src="img/propiedad2/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad2/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad2/foto3.jpg" alt="Foto 3">
@@ -132,7 +138,7 @@
                         <div class="card-specs-futuristic">
                             <div class="spec-item">
                                 <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                                <span>2D 1B</span>
+                                <span>2D 1B Living-Comedor y cocina americana</span>
                             </div>
                             <div class="spec-item">
                                 <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
@@ -140,18 +146,23 @@
                             </div>
                             <div class="spec-item">
                                 <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                <span>Conserjería</span>
+                                <span>Acceso controlado</span>
                             </div>
                         </div>
 
                         <div class="card-price">$90.000.000 CLP</div>
+
+                        <div class="prop-extended-desc" style="display:none;">
+                            <p>Te presentamos este departamento exclusivo en Condominio Loncotraro. Ubicado en un cuarto piso, consta de 48,30 m², dos dormitorios, un baño, cocina americana, living comedor, terraza, lavandería y estacionamiento privado.</p>
+                            <p>Con seguridad 24/7, áreas verdes, sala de eventos, juegos infantiles y piscina.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Propiedad 3 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
+                <!-- PROPIEDAD 3: Oportunidad de Inversión Comercial -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" id="propiedad-3" onclick="abrirPropiedadModal(this, 'propiedad-3')" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car3">
-                        <span class="card-badge">Terreno</span>
+                        <span class="card-badge">Disponible</span>
                         <img src="img/propiedad3/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad3/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad3/foto3.jpg" alt="Foto 3">
@@ -177,13 +188,18 @@
                         </div>
 
                         <div class="card-price">$150.000.000 CLP</div>
+
+                        <div class="prop-extended-desc" style="display:none;">
+                            <p>Ofrecemos esta propiedad en el corazón de Villarrica, en Avenida Colo Colo. Un terreno urbano de 325 m² aproximados, oportunidad única de inversión en un entorno con una plusvalía proyectada al más alto nivel.</p>
+                            <p>Se reciben ofertas serias. Posee Rol propio y documentación al día.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Propiedad 4 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
+                <!-- PROPIEDAD 4: Amplia Casa Remodelada -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" id="propiedad-4" onclick="abrirPropiedadModal(this, 'propiedad-4')" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car4">
-                        <span class="card-badge">Vivienda</span>
+                        <span class="card-badge">Disponible</span>
                         <img src="img/propiedad4/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad4/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad4/foto3.jpg" alt="Foto 3">
@@ -196,7 +212,7 @@
                         <div class="card-specs-futuristic">
                             <div class="spec-item">
                                 <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                                <span>2 pisos 2D 1B</span>
+                                <span>2 pisos, 2D 1B, living-comedor, cocina</span>
                             </div>
                             <div class="spec-item">
                                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -204,18 +220,23 @@
                             </div>
                             <div class="spec-item">
                                 <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-                                <span>Tranquilidad</span>
+                                <span>Entorno tranquilo</span>
                             </div>
                         </div>
 
                         <div class="card-price">$92.000.000 CLP</div>
+
+                        <div class="prop-extended-desc" style="display:none;">
+                            <p>Presentamos este hogar que su dueña se han preocupado de entregar remodelado, con patio amplio y excelente conectividad para vivir en familia o invertir, ubicado en C. Lago Panguipulli (Segunda faja), un lugar consolidado de Villarrica.</p>
+                            <p>Sector tranquilo y seguro, con áreas verdes y cercano a colegios, supermercados, CESFAM y comercios locales.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Propiedad 5 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
+                <!-- PROPIEDAD 5: Parcela Mirador de La Barda Caburgua -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" id="propiedad-5" onclick="abrirPropiedadModal(this, 'propiedad-5')" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car5">
-                        <span class="card-badge">Terreno</span>
+                        <span class="card-badge">Disponible</span>
                         <img src="img/propiedad5/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad5/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad5/foto3.jpg" alt="Foto 3">
@@ -241,13 +262,18 @@
                         </div>
 
                         <div class="card-price">$33.000.000 CLP</div>
+
+                        <div class="prop-extended-desc" style="display:none;">
+                            <p>Hermosa parcela ubicada en cerro La Barda, rodeada de naturaleza, árboles nativos y hermosas vistas a cerros y al volcán Villarrica. Cuenta con agua y luz a conectar (200 m).</p>
+                            <p>La parcela es la número 31, cuenta con toda su documentación al día. Y está ubicada a solo 14 km de Caburgua.</p>
+                        </div>
                     </div>
                 </div>
 
-<!-- Propiedad 6 -->
-                <div class="propiedad-card apple-reveal spatial-card-wrapper" onclick="abrirPropiedadModal(this)" style="cursor: pointer;">
+                <!-- PROPIEDAD 6: Proyecto turístico Aldea de Rinconada -->
+                <div class="propiedad-card apple-reveal spatial-card-wrapper" id="propiedad-6" onclick="abrirPropiedadModal(this, 'propiedad-6')" style="cursor: pointer;">
                     <div class="carousel spatial-image-scale" id="car6">
-                        <span class="card-badge">Oportunidad</span>
+                        <span class="card-badge">Disponible</span>
                         <img src="img/propiedad6/foto1.jpg" class="active" alt="Foto 1">
                         <img src="img/propiedad6/foto2.jpg" alt="Foto 2">
                         <img src="img/propiedad6/foto3.jpg" alt="Foto 3">
@@ -273,10 +299,19 @@
                             </div>
                             <div class="spec-item">
                                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                                <span>Luz eléctrica y agua de vertiente</span>
+                                <span>Luz eléctrica, agua de vertiente en su interior</span>
                             </div>
                         </div>
                         <div class="card-price">$285.000.000 CLP</div>
+
+                        <div class="prop-extended-desc" style="display:none;">
+                            <p>¡Vive o invierte en un entorno privilegiado rodeado de bosque nativo! Ubicado a solo 30 km de Pucón (Ruta Pucón-Curarrehue, sector Catripulli). Una oportunidad única con excelente conectividad, naturaleza y comodidades listas para habitar o desarrollar un proyecto turístico.</p>
+                            <p><strong>Incluye:</strong><br>
+                            - Casa Principal (147 m² + 60 m² terraza + 40 m² estacionamiento, 6 dormitorios y 2 baños).<br>
+                            - Cabaña 2 (50 m², 2 dormitorios, 1 baño e incluye tinaja).<br>
+                            - Cabaña 3 (50 m², 2 dormitorios y 1 baño).<br>
+                            - Cabaña 4 (26 m², 1 dormitorio y 1 baño).</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -529,11 +564,22 @@
     <!-- CARGA DE JS -->
     <script src="script.js?v=3.6"></script>
 
-    <!-- MODAL DETALLE DE PROPIEDAD (AMPLIADO Y CON CIERRE EXTERNO) -->
+    <!-- MODAL DE PROPIEDADES (ESTILO ENGEL & VÖLKERS REORGANIZADO) -->
     <div id="propiedadModal" class="apple-modal-overlay">
         <div class="apple-modal-card modal-propiedad-ampliada">
-            <button class="apple-modal-close" onclick="cerrarPropiedadModal()">&times;</button>
             
+            <!-- BARRA SUPERIOR: Etiqueta | Botón Compartir al Centro | Botón Cerrar -->
+            <div class="modal-header-actions" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <span id="modalBadge" class="card-badge" style="position: relative; top: auto; left: auto;"></span>
+                
+                <button class="modal-share-btn" onclick="copiarEnlacePropiedad()" title="Copiar enlace único" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #fff; padding: 7px 16px; border-radius: 980px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 0.85rem; transition: background 0.2s;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+                    Compartir Enlace
+                </button>
+
+                <button class="apple-modal-close" onclick="cerrarPropiedadModal()" style="position: relative; top: auto; right: auto;">&times;</button>
+            </div>
+
             <div class="modal-carousel-wrapper">
                 <img id="modalImg" src="" alt="Vista ampliada">
                 <button class="prev" onclick="cambiarFotoModal(-1)">❮</button>
@@ -541,11 +587,16 @@
             </div>
 
             <div class="modal-prop-info">
-                <span id="modalBadge" class="card-badge"></span>
                 <h3 id="modalTitle" class="card-title"></h3>
                 <div id="modalSpecs" class="card-specs-futuristic"></div>
                 <div id="modalPrice" class="card-price"></div>
                 
+                <!-- Línea divisoria elegante -->
+                <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 25px 0;"></div>
+                
+                <h4 class="modal-subtitle" style="font-size: 1rem; color: #fff; margin-bottom: 12px; font-weight: 500;">Descripción del Inmueble</h4>
+                <div id="modalDescription" class="modal-desc-text" style="color: #86868b; font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px;"></div>
+
                 <a id="modalWspBtn" href="#" target="_blank" class="btn-main btn-wsp-modal">
                     Solicitar más información en WhatsApp
                 </a>

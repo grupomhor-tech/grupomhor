@@ -1383,7 +1383,7 @@ html {
 }
 
 /* ==========================================================
-   MODAL DE PROPIEDADES (ESTILO APPLE DARK - AMPLIADO)
+   MODAL DE PROPIEDADES (ESTILO APPLE DARK - AMPLIADO Y ENGEL)
    ========================================================== */
 .apple-modal-overlay {
     position: fixed;
@@ -1418,6 +1418,16 @@ html {
     padding: 35px 40px;
     position: relative;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+    text-align: left;
+}
+
+.modal-propiedad-ampliada::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-propiedad-ampliada::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
 }
 
 .modal-propiedad-ampliada .apple-modal-close {
@@ -1524,7 +1534,6 @@ html {
     font-weight: 600;
 }
 
-/* Precios en blanco puro según tu línea gráfica limpia */
 .modal-prop-info .card-price {
     font-size: 1.35rem;
     font-weight: 700;
@@ -1532,7 +1541,15 @@ html {
     margin: 18px 0;
 }
 
-/* Botón de WhatsApp idéntico a "Solicitar reunión" (Estilo .btn-main con letras blancas) */
+.modal-desc-text p {
+    margin-bottom: 12px;
+}
+
+.modal-share-btn:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
 .btn-wsp-modal {
     background: rgba(255, 255, 255, 0.15);
     color: #ffffff;

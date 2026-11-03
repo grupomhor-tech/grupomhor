@@ -278,13 +278,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ==========================================================
-   MODAL DE PROPIEDADES (AMPLIAR, 5+ FOTOS, WHATSAPP Y CIERRE EXTERNO)
+   MODAL DE PROPIEDADES (ESTILO ENGEL & VÖLKERS + ENLACE ÚNICO)
    ========================================================== */
 let fotosModalActuales = [];
 let indiceFotoModal = 0;
 
-function abrirPropiedadModal(cardElement) {
-    // Captura dinámica de TODAS las fotos de la tarjeta (sea 3, 5 o más)
+function abrirPropiedadModal(cardElement, propId = '') {
     const imagenes = cardElement.querySelectorAll('.carousel img');
     fotosModalActuales = Array.from(imagenes).map(img => img.src);
     indiceFotoModal = 0;
@@ -298,8 +297,21 @@ function abrirPropiedadModal(cardElement) {
     document.getElementById('modalSpecs').innerHTML = cardElement.querySelector('.card-specs-futuristic')?.innerHTML || '';
     document.getElementById('modalPrice').textContent = cardElement.querySelector('.card-price')?.textContent || '';
 
+    // Carga de descripción extendida limpia
+    const descElement = cardElement.querySelector('.prop-extended-desc');
+    const descContainer = document.getElementById('modalDescription');
+    if (descContainer) {
+        descContainer.innerHTML = descElement ? descElement.innerHTML : '<p style="color: #86868b; font-size: 0.9rem;">Propiedad exclusiva de Grupo Mhor. Solicita más detalles de distribución y documentación directamente con nuestro equipo.</p>';
+    }
+
+    // Actualizar URL hash para compartir enlace único
+    if (propId) {
+        history.pushState(null, null, `#${propId}`);
+    }
+
     const titulo = encodeURIComponent(cardElement.querySelector('.card-title')?.textContent || 'una propiedad');
-    const wspUrl = `https://wa.me/56948814357?text=${encodeURIComponent('Hola Grupo Mhor, me interesa solicitar más información sobre: ')}${titulo}`;
+    const currentUrl = window.location.href;
+    const wspUrl = `https://wa.me/56948814357?text=${encodeURIComponent('Hola Grupo Mhor, me interesa solicitar más información y detalles sobre la propiedad: ')}${titulo} (${currentUrl})`;
     document.getElementById('modalWspBtn').href = wspUrl;
 
     document.getElementById('propiedadModal').classList.add('active');
@@ -307,6 +319,10 @@ function abrirPropiedadModal(cardElement) {
 
 function cerrarPropiedadModal() {
     document.getElementById('propiedadModal').classList.remove('active');
+    // Limpiar el hash de la URL sin recargar la página
+    if (window.location.hash) {
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
 }
 
 function cambiarFotoModal(direccion) {
@@ -315,7 +331,29 @@ function cambiarFotoModal(direccion) {
     document.getElementById('modalImg').src = fotosModalActuales[indiceFotoModal];
 }
 
-// Evento global para cerrar el modal de propiedades al hacer clic fuera de la tarjeta
+function copiarEnlacePropiedad() {
+    const urlActual = window.location.href;
+    navigator.clipboard.writeText(urlActual).then(() => {
+        alert("¡Enlace de la propiedad copiado al portapapeles! Ya puedes compartirlo en WhatsApp.");
+    }).catch(err => {
+        console.error("Error al copiar enlace: ", err);
+    });
+}
+
+// Detectar si el usuario entra mediante un enlace directo con hashtag al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+        const cardTarget = document.getElementById(hash);
+        if (cardTarget) {
+            setTimeout(() => {
+                abrirPropiedadModal(cardTarget, hash);
+            }, 400);
+        }
+    }
+});
+
+// Evento global para cerrar el modal al hacer clic fuera del recuadro
 window.addEventListener("click", (event) => {
     const modalPropiedad = document.getElementById("propiedadModal");
     if (modalPropiedad && event.target === modalPropiedad) {
